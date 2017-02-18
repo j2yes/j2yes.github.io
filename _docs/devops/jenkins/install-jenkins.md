@@ -28,7 +28,7 @@ To share a document:
 ![](//placehold.it/800x600)
 
 이미지 첨부
-![친절한 스크린샷]({{ site.url }}/_assets/1.png)
+![친절한 스크린샷]({{ site.url }}/assets/devops/jenkins/1.png)
 
 PDF 첨부
-[다운로드]({{ site.url }}/_assets/mydoc.pdf)
+[다운로드]({{ site.url }}/assets/mydoc.pdf)
