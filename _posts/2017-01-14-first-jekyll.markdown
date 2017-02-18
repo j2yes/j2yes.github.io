@@ -8,3 +8,6 @@ categories: jekyll update
 This is jekyll test file.
 
 `code`
+{% highlight javascript %}
+console.log('oh');
+{% endhighlight %}
