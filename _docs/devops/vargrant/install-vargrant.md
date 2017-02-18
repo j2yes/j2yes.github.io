@@ -1,14 +1,15 @@
 ---
 title: 설치하기
-category: Devops jenkins
+category: Devops vargrant
 order: 1
 ---
 
-jenins 설치하기
+vargrant 설치하기
 
 {% highlight shell linenos %}
 #console.log('oh');
 test
+echo 'wow'
 {% endhighlight %}
 
 {% gist j2yes/3451d495ee5b9a601385 %}
