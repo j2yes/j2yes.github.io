@@ -3,7 +3,7 @@
 
 title: blog
 url: "http://j2yes.github.io"
-baseurl:
+baseurl: "http://j2yes.github.io"
 google_analytics_key:
 show_full_navigation: true
 

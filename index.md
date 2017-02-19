@@ -2,6 +2,17 @@
 title: Welcome
 ---
 
+jekyll로 기술 블로그 글쓰기
+
+#이미지 첨부하기
+
+#코드 첨부하기
+
+#PDF 첨부하기
+
+#GIST 첨부하기
+
+
 This is the **Edition** template from [CloudCannon](http://cloudcannon.com/).
 **Edition** is perfect for documenting your product, application or service.
 It's populated with example content to give you some ideas.
