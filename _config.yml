@@ -2,9 +2,9 @@
 # Site
 
 title: blog
-url: "http://j2yes.github.io"
-baseurl: "http://j2yes.github.io"
-google_analytics_key:
+url: "https://j2yes.github.io"
+baseurl: "https://j2yes.github.io"
+google_analytics_key:"UA-92237726-1"
 show_full_navigation: true
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
