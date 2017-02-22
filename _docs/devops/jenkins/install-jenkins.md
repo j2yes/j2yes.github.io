@@ -4,7 +4,7 @@ category: jenkins
 order: 1
 ---
 
-jenins 설치하기
+jenins 설치하기 xptmxmoqhsdf
 
 코드 첨부
 {% highlight shell linenos %}
