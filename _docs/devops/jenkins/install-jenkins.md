@@ -12,7 +12,7 @@ jenins 설치하기 xptmxmoqhsdf
 test
 {% endhighlight %}
 
-GIST 첨부
+GIST 첨부 테스트
 {% gist j2yes/3451d495ee5b9a601385 %}
 
 Share documents with your friends! Send work or school projects from your computer or phone.
