@@ -6,6 +6,8 @@ order: 1
 
 jenins 설치하기 xptmxmoqhsdf
 
+##ubuntu에 설치하기
+
 코드 첨부
 {% highlight shell linenos %}
 #console.log('oh');
