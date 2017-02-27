@@ -10,7 +10,11 @@ jenins 설치하기 xptmxmoqhsdf
 
 코드 첨부
 {% highlight shell linenos %}
-#console.log('oh');
+
+\`console.log('oh');\`
+
+    코드블럭
+
 test
 {% endhighlight %}
 
