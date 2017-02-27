@@ -10,13 +10,14 @@ jenins 설치하기 xptmxmoqhsdf
 
 코드 첨부
 {% highlight shell linenos %}
-
-\`console.log('oh');\`
-
-    코드블럭
-
 test
 {% endhighlight %}
+
+\`코드 내용\`
+
+    코드블럭테스트
+    ㅁㄴㅇㄹ
+    ㅁㄴㅇㄹ
 
 GIST 첨부 테스트
 {% gist j2yes/3451d495ee5b9a601385 %}
