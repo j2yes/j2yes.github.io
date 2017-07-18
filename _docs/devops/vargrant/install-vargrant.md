@@ -12,7 +12,6 @@ test
 echo 'wow'
 {% endhighlight %}
 
-{% gist j2yes/3451d495ee5b9a601385 %}
 
 하이라이터 지원 언어 목록
 https://haisum.github.io/2014/11/07/jekyll-pygments-supported-highlighters/
