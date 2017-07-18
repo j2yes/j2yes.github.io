@@ -4,17 +4,14 @@ category: Devops vargrant
 order: 1
 ---
 
+
 vargrant 설치하기
 
-{% highlight shell linenos %}
-#console.log('oh');
-test
-echo 'wow'
-{% endhighlight %}
+{% highlight shell linenos %} #console.log('oh'); test echo 'wow' {% endhighlight %}
 
+{% gist j2yes/3451d495ee5b9a601385 %}
 
-하이라이터 지원 언어 목록
-https://haisum.github.io/2014/11/07/jekyll-pygments-supported-highlighters/
+하이라이터 지원 언어 목록 https://haisum.github.io/2014/11/07/jekyll-pygments-supported-highlighters/
 
 Share documents with your friends! Send work or school projects from your computer or phone.
 
