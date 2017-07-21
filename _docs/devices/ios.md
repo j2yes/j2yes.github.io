@@ -2,6 +2,8 @@
 title: iOS
 category: Devices
 order: 1
+comments: true
+# other options
 ---
 
 Use ChatApp on most of your Apple devices. Only the latest versions are supported.
