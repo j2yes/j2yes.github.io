@@ -1,5 +1,7 @@
 ---
 title: Welcome
+comments: true
+# other options
 ---
 
 jekyll로 기술 블로그 글쓰기
