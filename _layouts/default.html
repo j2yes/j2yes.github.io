@@ -58,7 +58,6 @@
 							<ul>
 								{% for item in items %}
 									<li class="nav-item {% if item.url == page.url %}current{% endif %}"><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
-									<a href="{{ site.url }}{{ item.url }}#disqus_thread"></a>
 									</li>
 								{% endfor %}
 							</ul>
@@ -79,6 +78,7 @@
 		    <div class="page-header">
 				<h2>{% if page.category %}{{ page.category }}{% else %}{{ site.title }}{% endif %}</h2>
 				<h3>{{ page.title }}</h3>
+				<a href="{{ site.url }}{{ page.url }}#disqus_thread"></a>
 			</div>
 			<article class="content">
 				{{ content }}
