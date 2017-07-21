@@ -74,6 +74,8 @@
 		</header>
 
 		<section class="main">
+		    <a href="{{ site.baseUrl }}#disqus_thread">Link</a>
+		    
 			<div class="page-header">
 				<h2>{% if page.category %}{{ page.category }}{% else %}{{ site.title }}{% endif %}</h2>
 				<h3>{{ page.title }}</h3>
@@ -91,8 +93,8 @@
                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
                 
                 var disqus_config = function () {
-                    this.page.url = "{{ site.baseurl }}{{ page.url }}";  // Replace PAGE_URL with your page's canonical URL variable
-                    this.page.identifier = "{{ page.url }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    this.page.url = "{{ site.url }}{{ page.url }}";  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = "{{ page.id }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
                 };
                 
                 (function() { // DON'T EDIT BELOW THIS LINE
