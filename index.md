@@ -1,18 +1,18 @@
 ---
-title: Welcome
+title: 웰컴 투 개발 블로그
 comments: true
 # other options
 ---
 
-jekyll로 기술 블로그 글쓰기
+###jekyll로 기술 블로그 글쓰기
 
-# 이미지 첨부하기
+#### 이미지 첨부하기
 
-# 코드 첨부하기
+#### 코드 첨부하기
 
-# PDF 첨부하기
+#### PDF 첨부하기
 
-# GIST 첨부하기
+#### GIST 첨부하기
 
 
 This is the **Edition** template from [CloudCannon](http://cloudcannon.com/).
