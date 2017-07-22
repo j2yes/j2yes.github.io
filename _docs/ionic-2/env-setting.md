@@ -5,3 +5,14 @@ order: 1
 comments: true
 # other options
 ---
+
+
+일단 공식 document로 가보자
+http://ionicframework.com/docs/intro/installation/
+
+설치합시다!!
+npm install -g ionic cordova
+
+*node는 필수로 설치되어 있어야함
+
+*mac에서 permission denied 메시지가 나와서 sudo로 설치
