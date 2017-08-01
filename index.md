@@ -9,6 +9,7 @@ comments: true
 ## 제목을 지정해보자
 
 ```
+Ex)
 # H1
 ## H2
 ### H3
@@ -18,10 +19,12 @@ comments: true
 ```
 
 ## 링크 첨부하기
+
+```
+Ex)
 [Link](https://j2yes.github.io/)
 ```
-[Link](https://j2yes.github.io/)
-```
+> Result : [Link](https://j2yes.github.io/)
 
 ## 이미지 첨부하기
 
@@ -30,13 +33,14 @@ comments: true
 ## 코드(GIST) 첨부하기
 
 ## 선으로 구분하기
--------------
 
 ```
+Ex)
 -------------
-```
-
+or
 =============
+```
+
 
 
 
