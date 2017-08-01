@@ -30,11 +30,11 @@ comments: true
 
 ### 이미지 첨부하기
 
+```
 ![background](/assets/devops/jenkins/1.png "Optional title")
+```
 
-```
 ![background](/assets/devops/jenkins/1.png "Optional title")
-```
 
 ### 파일(PDF) 첨부하기
 
@@ -86,30 +86,40 @@ ___
 
 ### 번호 없는 리스트
 
-+ Java
-- Python
-* Ruby
-
 ```
 Code Ex)
 + Java
 - Python
 * Ruby
 ```
+
++ Java
+- Python
+* Ruby
+
 ### 번호 있는 리스트
 
+```
 1. 첫번째
 2. 두번째
 3. 세번째
+```
 
-```
 1. 첫번째
 2. 두번째
 3. 세번째
-```
 
 ### 텍스트에 효과주기
 
+```
+*single asterisks*
+_single underscores_
+**double asterisks**
+__double underscores__
+++underline++
+~~cancelline~~
+```
+
 *single asterisks*
 
 _single underscores_
@@ -121,15 +131,6 @@ __double underscores__
 ++underline++
 
 ~~cancelline~~
-
-```
-*single asterisks*
-_single underscores_
-**double asterisks**
-__double underscores__
-++underline++
-~~cancelline~~
-```
 
 ### \` 사용하기
 
