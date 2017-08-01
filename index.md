@@ -25,9 +25,12 @@ comments: true
 [Link2][blog]
 [blog]: https://j2yes.github.io/
 ```
-> Result : [Link](https://j2yes.github.io/)
-> [Link2][blog]
-> [blog]: https://j2yes.github.io/
+> Result : [Link1](https://j2yes.github.io/)
+> [Link2][blog][blog]: https://j2yes.github.io/
+> 
+
+[Link2][blog]
+[blog]: https://j2yes.github.io/
 
 ## 이미지 첨부하기
 
