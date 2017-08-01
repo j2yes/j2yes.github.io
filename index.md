@@ -1,5 +1,5 @@
 ---
-title: Prototyper
+title: prototype a-z
 comments: true
 # other options
 ---
