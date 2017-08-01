@@ -87,7 +87,6 @@ ___
 ### 번호 없는 리스트
 
 ```
-Code Ex)
 + Java
 - Python
 * Ruby
@@ -112,33 +111,23 @@ Code Ex)
 ### 텍스트에 효과주기
 
 ```
-*single asterisks*
-_single underscores_
-**double asterisks**
-__double underscores__
-++underline++
-~~cancelline~~
+**두껍게**
+~~취소선~~
 ```
 
-*single asterisks*
+기본글씨
 
-_single underscores_
+**두껍게**
 
-**double asterisks**
-
-__double underscores__
-
-++underline++
-
-~~cancelline~~
+~~취소선~~
 
 ### \` 사용하기
 
 ```
-\`코드 내용\`
+\`
 ```
 
-> \`코드 내용\`
+> \`
 
 
 
