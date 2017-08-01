@@ -45,26 +45,27 @@ comments: true
 
 ### 코드(GIST) 첨부하기
 
-### 코드 첨부하기
+### 코드블럭 첨부하기
 
+    스페이스 4칸 or Tab
+    or
     ```shell
     ps -ef | grep oh
     ```
-
+    or
     ```javascript
     console.log('oh');
     ```
-
+    or
     ```java
     static void main(String args[]){
     }
     ```
-
+    or
     ```ruby
     def support
     end
     ```
-
 
 ### 수평선으로 구분하기
 
