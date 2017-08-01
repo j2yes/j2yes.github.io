@@ -9,7 +9,6 @@ comments: true
 ## 제목을 지정해보자
 
 ```
-Code Ex)
 # H1
 ## H2
 ### H3
@@ -21,10 +20,14 @@ Code Ex)
 ## 링크 첨부하기
 
 ```
-Code Ex)
-[Link](https://j2yes.github.io/)
+[Link1](https://j2yes.github.io/)
+
+[Link2][blog]
+[blog]: https://j2yes.github.io/
 ```
 > Result : [Link](https://j2yes.github.io/)
+> [Link2][blog]
+> [blog]: https://j2yes.github.io/
 
 ## 이미지 첨부하기
 
@@ -38,27 +41,24 @@ Code Ex)
     ps -ef | grep oh
     ```
 
-```javascript
-console.log('oh');
-```
+    ```javascript
+    console.log('oh');
+    ```
 
-```java
-static void main(String args[]){
-}
-```
+    ```java
+    static void main(String args[]){
+    }
+    ```
 
-```ruby
-def support
-end
-```
+    ```ruby
+    def support
+    end
+    ```
 
 
 ## 수평선으로 구분하기
 
-___
-
 ```
-Code Ex)
 ---
 or
 ***
