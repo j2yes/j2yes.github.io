@@ -34,10 +34,9 @@ Code Ex)
 
 ## 코드 첨부하기
 
-```
-```shell
-ps -ef | grep oh
-```
+    ```shell
+    ps -ef | grep oh
+    ```
 
 ```javascript
 console.log('oh');
@@ -52,10 +51,9 @@ static void main(String args[]){
 def support
 end
 ```
-```
 
 
-## 수평선 구분하기
+## 수평선으로 구분하기
 
 ___
 
@@ -81,8 +79,17 @@ Code Ex)
 -Ruby
 ```
 
+## 텍스트에 효과주기
 
-
+```
+Code Ex)
+*single asterisks*
+_single underscores_
+**double asterisks**
+__double underscores__
+++underline++
+~~cancelline~~
+```
 
 ###jekyll로 기술 블로그 글쓰기
 
