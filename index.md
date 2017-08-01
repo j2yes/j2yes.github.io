@@ -24,7 +24,7 @@ comments: true
 
 [feedback@example.com](mailto:feedback@example.com)
 ```
-> Result : [Link1](https://j2yes.github.io/)
+> [Link1](https://j2yes.github.io/)
 
 > [feedback@example.com](mailto:feedback@example.com)
 
@@ -38,11 +38,11 @@ comments: true
 
 ### 파일(PDF) 첨부하기
 
+```
 [다운로드](/assets/mydoc.pdf)
+```
 
-```
-[다운로드](/assets/mydoc.pdf)
-```
+> [다운로드](/assets/mydoc.pdf)
 
 ### 코드(GIST) 첨부하기
 
@@ -119,10 +119,15 @@ Code Ex)
 ### 텍스트에 효과주기
 
 *single asterisks*
+
 _single underscores_
+
 **double asterisks**
+
 __double underscores__
+
 ++underline++
+
 ~~cancelline~~
 
 ```
@@ -134,8 +139,13 @@ __double underscores__
 ~~cancelline~~
 ```
 
+### \` 사용하기
 
+```
 \`코드 내용\`
+```
+
+> \`코드 내용\`
 
 
 
