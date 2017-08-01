@@ -9,15 +9,15 @@ show_full_navigation: true
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
 logo: /siteicon.png
-description: Product documentation template for Jekyll.
+description: Development Story.
 author:
-  name:
-  email:
+  name: j2yes
+  email: j2yess@gmail.com
   twitter: # twitter username without the @ symbol
 social:
-  name: Edition Template
+  name: Software Engineer Blog
   links:
-    - https://github.com/CloudCannon/edition-jekyll-template
+    - https://j2yes.github.io
 
 # -----
 # Build
