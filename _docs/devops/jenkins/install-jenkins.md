@@ -28,7 +28,8 @@ console.log('oh');
 ```
 
 ```java
-static void
+static void main(String args[]){
+}
 ```
 
 ```ruby
