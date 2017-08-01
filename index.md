@@ -68,15 +68,15 @@ ___
 
 ## 번호 없는 리스트
 
-+Java
-+Python
-=Ruby
++ Java
+- Python
+* Ruby
 
 ```
 Code Ex)
-+Java
-*Python
--Ruby
++ Java
+- Python
+* Ruby
 ```
 ## 번호 있는 리스트
 
