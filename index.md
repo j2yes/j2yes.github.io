@@ -89,7 +89,6 @@ Code Ex)
 ## 텍스트에 효과주기
 
 ```
-Code Ex)
 *single asterisks*
 _single underscores_
 **double asterisks**
@@ -98,15 +97,8 @@ __double underscores__
 ~~cancelline~~
 ```
 
-###jekyll로 기술 블로그 글쓰기
 
-#### 이미지 첨부하기
 
-#### 코드 첨부하기
-
-#### PDF 첨부하기
-
-#### GIST 첨부하기
 
 
 This is the **Edition** template from [CloudCannon](http://cloudcannon.com/).
