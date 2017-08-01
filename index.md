@@ -46,19 +46,11 @@ comments: true
 
 ### 코드(GIST) 첨부하기
 
-{% highlight shell linenos %}
-test
-{% endhighlight %}
-
-{% gist j2yes/3451d495ee5b9a601385 %}
-
 ```
-{% highlight shell linenos %}
-test
-{% endhighlight %}
-
 {% gist j2yes/3451d495ee5b9a601385 %}
 ```
+
+{% gist j2yes/3451d495ee5b9a601385 %}
 
 ### 코드블럭 첨부하기
 
