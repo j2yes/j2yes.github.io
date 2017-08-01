@@ -32,12 +32,35 @@ Code Ex)
 
 ## 코드(GIST) 첨부하기
 
+## 코드 첨부하기
+
+```
+```shell
+ps -ef | grep oh
+```
+
+```javascript
+console.log('oh');
+```
+
+```java
+static void main(String args[]){
+}
+```
+
+```ruby
+def support
+end
+```
+```
+
+
 ## 수평선 구분하기
 
 ___
 
 ```
-Ex)
+Code Ex)
 ---
 or
 ***
@@ -52,6 +75,7 @@ ___
 -Ruby
 
 ```
+Code Ex)
 +Java
 *Python
 -Ruby
