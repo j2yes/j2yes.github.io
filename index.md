@@ -9,7 +9,7 @@ comments: true
 ## 제목을 지정해보자
 
 ```
-Ex)
+Code Ex)
 # H1
 ## H2
 ### H3
@@ -21,7 +21,7 @@ Ex)
 ## 링크 첨부하기
 
 ```
-Ex)
+Code Ex)
 [Link](https://j2yes.github.io/)
 ```
 > Result : [Link](https://j2yes.github.io/)
