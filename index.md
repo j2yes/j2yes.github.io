@@ -4,9 +4,9 @@ comments: true
 # other options
 ---
 
-# markdown으로 글쓰기
+## markdown으로 글쓰기
 
-## 제목을 지정해보자
+### 제목을 지정해보자
 
 ```
 # H1
@@ -17,25 +17,27 @@ comments: true
 ###### H6
 ```
 
-## 링크 첨부하기
+### 링크 첨부하기
+
+> Result : [Link1](https://j2yes.github.io/)
 
 ```
 [Link1](https://j2yes.github.io/)
 ```
-> Result : [Link1](https://j2yes.github.io/)
 
-## 이미지 첨부하기
+### 이미지 첨부하기
+
+![background](/assets/devops/jenkins/1.png "Optional title")
 
 ```
 ![background](/assets/devops/jenkins/1.png "Optional title")
 ```
-![background](/assets/devops/jenkins/1.png "Optional title")
 
-## 파일(PDF) 첨부하기
+### 파일(PDF) 첨부하기
 
-## 코드(GIST) 첨부하기
+### 코드(GIST) 첨부하기
 
-## 코드 첨부하기
+### 코드 첨부하기
 
     ```shell
     ps -ef | grep oh
@@ -56,7 +58,7 @@ comments: true
     ```
 
 
-## 수평선으로 구분하기
+### 수평선으로 구분하기
 
 ```
 ---
@@ -66,7 +68,7 @@ or
 ___
 ```
 
-## 번호 없는 리스트
+### 번호 없는 리스트
 
 + Java
 - Python
@@ -78,7 +80,11 @@ Code Ex)
 - Python
 * Ruby
 ```
-## 번호 있는 리스트
+### 번호 있는 리스트
+
+1. 첫번째
+2. 두번째
+3. 세번째
 
 ```
 1. 첫번째
@@ -86,7 +92,7 @@ Code Ex)
 3. 세번째
 ```
 
-## 텍스트에 효과주기
+### 텍스트에 효과주기
 
 ```
 *single asterisks*
