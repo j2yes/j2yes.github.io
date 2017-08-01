@@ -35,6 +35,12 @@ comments: true
 
 ### 파일(PDF) 첨부하기
 
+[다운로드](/assets/mydoc.pdf)
+
+```
+[다운로드](/assets/mydoc.pdf)
+```
+
 ### 코드(GIST) 첨부하기
 
 ### 코드 첨부하기
