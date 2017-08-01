@@ -34,6 +34,11 @@ comments: true
 
 ## 이미지 첨부하기
 
+```
+![background](/assets/devops/jenkins/1.png "Optional title")
+```
+![background](/assets/devops/jenkins/1.png "Optional title")
+
 ## 파일(PDF) 첨부하기
 
 ## 코드(GIST) 첨부하기
