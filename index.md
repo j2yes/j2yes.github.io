@@ -54,7 +54,7 @@ comments: true
 
 ### 코드블럭 첨부하기
 
-![하이라이터 지원 언어 목록](https://haisum.github.io/2014/11/07/jekyll-pygments-supported-highlighters/)
+[하이라이터 지원 언어 목록](https://haisum.github.io/2014/11/07/jekyll-pygments-supported-highlighters/)
 
     스페이스 4칸 or Tab
     or
