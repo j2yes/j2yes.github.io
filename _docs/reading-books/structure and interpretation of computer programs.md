@@ -8,4 +8,4 @@ order: 1
 #### 들어가며
 
 #### download Racket(lisp)
-[Racket]https://download.racket-lang.org/
+[Racket](https://download.racket-lang.org/)
