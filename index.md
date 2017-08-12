@@ -1,6 +1,6 @@
 ---
 title: prototype a-z
-comments: true
+# comments: true
 # other options
 ---
 
