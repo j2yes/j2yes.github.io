@@ -1,7 +1,6 @@
 ---
 title: 네트워크 관리사
 category: certificate
-type: major
 comments: true
 order: 1
 ---
