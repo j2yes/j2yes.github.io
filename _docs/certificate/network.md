@@ -25,6 +25,7 @@ order: 1
 - 라우터 3문제(5.5점)
 
 #### 기출문제
+[필기기출문제](http://www.comcbt.com/xe/jf)
 
 #### 실기 프로그램
 [3개의 프로그램](http://www.icqa.or.kr/advice/network06.aspx)을 다운로드받아 실기를 준비해야한다.
