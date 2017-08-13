@@ -16,3 +16,10 @@ npm install -g ionic cordova
 *node는 필수로 설치되어 있어야함
 
 *mac에서 permission denied 메시지가 나와서 sudo로 설치
+
+
+###자주 사용하는 ionic command
+
+#### 특정 디바이스에서 실행하기
+
+> ionic run android
