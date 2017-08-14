@@ -29,3 +29,6 @@ Built the following apk(s):
         /workspace_path/platforms/android/build/outputs/apk/android-release-unsigned.apk
 
 ```
+
+#### keystore 파일만들기
+> keytool -genkey -v -keystore stroke-key.keystore -alias its_my_sign_key -keyalg RSA -keysize 2048 -validity 10000
