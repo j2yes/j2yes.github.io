@@ -37,3 +37,9 @@ keystore를 만들 때 password를 물어보는데, 잘 저장해 두세요.
 #### 위에서 만든 릴리즈버전 apk를 sign하기
 위에서 만든 릴리즈버전 apk에 아래 command로 sign을 해주자 (keystore 만들 때 지정한 password를 물어봅니다)
 > jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore stroke-key.keystore android-release-unsigned.apk **its_my_sign_key**
+
+
+#### jar align 하기
+> ~/Library/Android/sdk/build-tools/25.0.2/zipalign -v 4 /Users/jiseob/Desktop/cordova/auction/android-release-unsigned.apk android-release-aligned.apk
+
+최종 아웃풋 파일인 `android-release-aligned.apk`를 마켓에 업로드할 수 있어요.
