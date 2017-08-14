@@ -1,5 +1,5 @@
 ---
-title: play store에 게시하
+title: play store에 게시하기
 category: ionic-2
 order: 3
 comments: true
