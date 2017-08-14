@@ -20,8 +20,8 @@ http://ionicframework.com/docs/intro/installation/
 
 ###자주 사용하는 ionic command
 
-> ionic cordova run android --device
+> ionic cordova run android -device
 
-> ionic cordova build android --release
+> ionic cordova build android -release
 
 > ionic cordova platform ls
