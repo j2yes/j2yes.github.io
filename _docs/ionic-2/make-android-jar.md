@@ -7,7 +7,7 @@ comments: true
 ---
 
 #### 릴리즈 버전 apk 파일 생성
-> ionic cordova build android - -release 
+> ionic cordova build android --release 
 
 command를 입력하면 아래처럼 빌드결과가 출력됩니다.
 
@@ -22,7 +22,7 @@ command를 입력하면 아래처럼 빌드결과가 출력됩니다.
 :assembleRelease
 :cdvBuildRelease
 
-BUILD SUCCESSFUL
+BUILD SUCCESSFUL    
 
 Total time: 22.868 secs
 Built the following apk(s): 
