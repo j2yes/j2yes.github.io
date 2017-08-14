@@ -6,7 +6,7 @@ comments: true
 # other options
 ---
 
-#### 릴리즈 버전 jar 파일 생성하기
+#### 릴리즈 버전 apk 파일 생성하기
 > ionic cordova build android --release 
 
 command를 입력하여 아래처럼 빌드결과가 출력됩니다.
@@ -31,4 +31,7 @@ Built the following apk(s):
 ```
 
 #### keystore 파일만들기
-> keytool -genkey -v -keystore stroke-key.keystore -alias its_my_sign_key -keyalg RSA -keysize 2048 -validity 10000
+> keytool -genkey -v -keystore stroke-key.keystore -alias **its_my_sign_key** -keyalg RSA -keysize 2048 -validity 10000
+
+#### 위에서 만든 릴리즈버전 apk를 sign하기
+> jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore stroke-key.keystore android-release-unsigned.apk **its_my_sign_key**
