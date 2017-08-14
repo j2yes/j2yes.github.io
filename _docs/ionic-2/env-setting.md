@@ -18,7 +18,7 @@ http://ionicframework.com/docs/intro/installation/
 *mac에서 permission denied 메시지가 나와서 sudo로 설치
 
 
-###자주 사용하는 ionic command
+### 자주 사용하는 ionic command
 
 > ionic cordova run android -device
 
