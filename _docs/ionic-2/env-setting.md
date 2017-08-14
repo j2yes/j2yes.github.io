@@ -11,7 +11,7 @@ comments: true
 http://ionicframework.com/docs/intro/installation/
 
 설치합시다!!
-npm install -g ionic cordova
+> npm install -g ionic cordova
 
 *node는 필수로 설치되어 있어야함
 
@@ -20,6 +20,8 @@ npm install -g ionic cordova
 
 ###자주 사용하는 ionic command
 
-#### 특정 디바이스에서 실행하기
+> ionic cordova run android --device
 
-> ionic run android
+> ionic cordova build android --release
+
+> ionic cordova platform ls
