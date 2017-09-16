@@ -31,7 +31,7 @@ Built the following apk(s):
 ```
 
 #### keystore 파일만들기
-keystore를 만들 때 password를 물어보는데, 잘 저장해 두세요.
+keystore를 만들 때 password를 물어보는데, 잘 저장해 두세요. (* keystore는 처음 한번만 만들어 사용합니다.)
 > keytool -genkey -v -keystore stroke-key.keystore -alias **its_my_sign_key** -keyalg RSA -keysize 2048 -validity 10000
 
 #### apk sign하기
