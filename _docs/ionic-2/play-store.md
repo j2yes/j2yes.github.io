@@ -6,4 +6,5 @@ comments: true
 # other options
 ---
 
-#### 마켓에 게시하기
+#### 1. 구글 플레이 개발자 콘솔에 접속해보자
+https://play.google.com/apps/publish
