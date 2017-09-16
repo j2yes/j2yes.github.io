@@ -36,7 +36,7 @@ comments: true
 #### 2. 앱 등록하기
 
 스토어에 업로드 가능한 apk 버전을 만들어야 합니다.
-(참고 :  [APK 만들기](https://j2yes.github.io/ionic-2/make-android-jar/) )
+(참고 :  [APK 만들기](https://j2yes.github.io/ionic-2/make-android-jar/ =250x) )
 
 #### 3. 콘텐츠 등급 & 가격 및 배포 설정
 
