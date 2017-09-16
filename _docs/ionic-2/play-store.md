@@ -29,7 +29,7 @@ comments: true
 
 필수 항목을 다 채우고 저장하면 메뉴에서 초록색 체크를 확인할 수 있다.
 
-![메뉴 화면](/assets/ionic/play_store_menu.png =250x "메뉴 화면"){ width="250px" }
+![메뉴 화면](/assets/ionic/play_store_menu.png = 250x "메뉴 화면")
 
 이제 나머지 ! 표시가 있는 메뉴정보를 설정해보자
 
