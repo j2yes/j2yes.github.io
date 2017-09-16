@@ -9,8 +9,9 @@ comments: true
 ### 구글 플레이 개발자 콘솔에 접속해보자 (https://play.google.com/apps/publish)
 
 > 업로드전에 앱의 아이콘고 스플래쉬 이미지부터 변경해두자 (png 파일이어야 함)
-https://thenounproject.com/
-https://www.iconfinder.com/
+    참고사이트 
+    - https://thenounproject.com/
+    - https://www.iconfinder.com/
 
 #### 1. 스토어 등록정보 
 
