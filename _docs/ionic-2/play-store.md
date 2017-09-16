@@ -29,14 +29,14 @@ comments: true
 
 필수 항목을 다 채우고 저장하면 메뉴에서 초록색 체크를 확인할 수 있다.
 
-![메뉴 화면](/assets/ionic/play_store_menu.png "메뉴 화면")
+![메뉴 화면](/assets/ionic/play_store_menu.png "메뉴 화면"){ width="250px" }
 
 이제 나머지 ! 표시가 있는 메뉴정보를 설정해보자
 
 #### 2. 앱 등록하기
 
 스토어에 업로드 가능한 apk 버전을 만들어야 합니다.
-(참고 :  [APK 만들기](https://j2yes.github.io/ionic-2/make-android-jar/ =250x) )
+(참고 :  [APK 만들기](https://j2yes.github.io/ionic-2/make-android-jar/) )
 
 #### 3. 콘텐츠 등급 & 가격 및 배포 설정
 
