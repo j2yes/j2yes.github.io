@@ -1,5 +1,5 @@
 ---
-title: prototype app development 1
+title: prototype app 1
 category: ionic-2
 order: 4
 comments: true
