@@ -49,7 +49,7 @@ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore stroke-key.keys
 
 #### apk align 하기
 ```
-~/Library/Android/sdk/build-tools/25.0.2/zipalign -v 4 /Users/jiseob/Desktop/cordova/auction/android-release-unsigned.apk android-release-aligned.apk
+~/Library/Android/sdk/build-tools/25.0.2/zipalign -v 4 /path/android-release-unsigned.apk android-release-aligned.apk
 ```
 
 최종 아웃풋 파일인 `android-release-aligned.apk`를 마켓에 업로드할 수 있어요.
