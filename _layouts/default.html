@@ -55,7 +55,7 @@
 					<li class="nav-item top-level {% if category.name == page.category %}current{% endif %}">
 						{% assign kind_grouped = category.items | group_by: 'kind' %}
 						<a href="#">{{ category.name }}</a>
-						<ul style="{% if category.name == page.category %}display: none;{% endif %}">
+						<ul style="{% if category.name != page.category %}display: none;{% endif %}">
 						{% for kind in kind_grouped %}
 							<li class="nav-item second-level {% if kind.name == page.kind %}current{% endif %}">
 								{% assign items = kind.items | sort: 'order' %}
