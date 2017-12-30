@@ -55,7 +55,7 @@
 					<li class="nav-item top-level {% if category.name == page.category %}current{% endif %}">
 						{% assign kind_grouped = category.items | group_by: 'kind' %}
 						<a href="#">{{ category.name }}</a>
-						<ul>
+						<ul style="display: none;">
 						{% for kind in kind_grouped %}
 							<li class="nav-item second-level {% if kind.name == page.kind %}current{% endif %}">
 								{% assign items = kind.items | sort: 'order' %}
@@ -138,7 +138,11 @@
 		<script>
 			$( document ).ready(function() {
 				$(".top-level a").click(function() {
-					$(this).siblings('ul').hide( "slow" );
+					if($(this).siblings('ul')[0].style.display === 'none'){
+						$(this).siblings('ul').show( "slow" );
+					}else{
+						$(this).siblings('ul').hide( "slow" );
+					}
 				});
 			});
 		</script>
