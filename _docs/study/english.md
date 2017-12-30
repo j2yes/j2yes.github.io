@@ -1,9 +1,9 @@
 ---
-title: english
+title: grammar
 category: study
-kind : it
+kind : english
 comments: true
-order: 4
+order: 1
 ---
 
 
