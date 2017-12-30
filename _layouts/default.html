@@ -137,8 +137,8 @@
 		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 		<script>
 			$( document ).ready(function() {
-				$(".top-level").click(function() {
-					$(this).hide( "slow" );
+				$(".top-level a").click(function() {
+					$(this).siblings('ul').hide( "slow" );
 				});
 			});
 		</script>
