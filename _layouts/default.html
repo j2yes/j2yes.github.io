@@ -57,7 +57,7 @@
 						<a href="{{ site.baseurl }}{{ kind_grouped.first.url }}">{{ category.name }}</a>
 						<ul>
 						{% for kind in kind_grouped %}
-							<li class="nav-item {% if kind.name == page.kind %}current{% endif %}">
+							<li class="nav-item second-level {% if kind.name == page.kind %}current{% endif %}">
 								{% assign items = kind.items | sort: 'order' %}
 								<a href="{{ site.baseurl }}{{ items.first.url }}">{{ kind.name }}</a>
 								<ul>
@@ -134,5 +134,13 @@
 			});
 		</script>
 		<script id="dsq-count-scr" src="//j2yes.disqus.com/count.js" async></script>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script>
+			$( document ).ready(function() {
+				$(".top-level").click(function() {
+					$(this).hide( "slow" );
+				});
+			});
+		</script>
 	</body>
 </html>
