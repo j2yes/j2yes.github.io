@@ -54,12 +54,12 @@
 					{% for category in category_grouped %}
 					<li class="nav-item top-level {% if category.name == page.category %}current{% endif %}">
 						<ul>
-						{% assign kind_grouped = category | group_by: 'kind' %}
+						{% assign kind_grouped = category.items | group_by: 'kind' %}
 						{% for kind in kind_grouped %}
-							<a href="{{ site.baseurl }}{{ kind.first.url }}">{{ kind.name }}</a>
 							<li class="nav-item {% if kind.name == page.kind %}current{% endif %}">
+								{% assign items = kind.items | sort: 'order' %}
+								<a href="{{ site.baseurl }}{{ items.first.url }}">{{ kind.name }}</a>
 								<ul>
-									{% assign items = kind.items | sort: 'order' %}
 									{% for item in items %}
 									<li class="nav-item {% if item.url == page.url %}current{% endif %}"><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
 									</li>
