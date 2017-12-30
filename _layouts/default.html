@@ -53,8 +53,9 @@
 					{% assign category_grouped = site.docs | group_by: 'category' %}
 					{% for category in category_grouped %}
 					<li class="nav-item top-level {% if category.name == page.category %}current{% endif %}">
-						<ul>
 						{% assign kind_grouped = category.items | group_by: 'kind' %}
+						<a href="{{ site.baseurl }}{{ kind_grouped.first.url }}">{{ category.name }}</a>
+						<ul>
 						{% for kind in kind_grouped %}
 							<li class="nav-item {% if kind.name == page.kind %}current{% endif %}">
 								{% assign items = kind.items | sort: 'order' %}
