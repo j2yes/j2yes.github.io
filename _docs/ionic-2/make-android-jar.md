@@ -1,6 +1,7 @@
 ---
 title: 안드로이드 apk 만들기
 category: ionic-2
+kind : it
 order: 2
 comments: true
 # other options

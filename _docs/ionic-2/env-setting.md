@@ -1,6 +1,7 @@
 ---
 title: ionic 2 개발 환경설정
 category: ionic-2
+kind : it
 order: 1
 comments: true
 # other options

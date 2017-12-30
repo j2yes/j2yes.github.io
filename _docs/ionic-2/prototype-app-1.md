@@ -1,6 +1,7 @@
 ---
 title: prototype app 1
 category: ionic-2
+kind : it
 order: 4
 comments: true
 # other options

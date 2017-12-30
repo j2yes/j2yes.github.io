@@ -1,6 +1,7 @@
 ---
 title: english
 category: study
+kind : it
 comments: true
 order: 4
 ---

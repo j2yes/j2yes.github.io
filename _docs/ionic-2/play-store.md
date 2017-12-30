@@ -1,6 +1,7 @@
 ---
 title: play store에 게시하기
 category: ionic-2
+kind : it
 order: 3
 comments: true
 # other options
