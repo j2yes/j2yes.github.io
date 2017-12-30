@@ -30,11 +30,11 @@
 
 	<body>
 		<header>
-			<h1>
-				<a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/images/emblem.svg" width="40" height="40" alt="{{ site.title }} logo"></a>
-				{{ site.title }}
-				<button type="button" class="open-nav" id="open-nav"></button>
-			</h1>
+			<!--<h1>-->
+				<!--<a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/images/emblem.svg" width="40" height="40" alt="{{ site.title }} logo"></a>-->
+				<!--{{ site.title }}-->
+				<!--<button type="button" class="open-nav" id="open-nav"></button>-->
+			<!--</h1>-->
 
 			<form action="{{ site.baseurl }}/search/" method="get">
 				<input type="text" name="q" id="search-input" placeholder="Search" autofocus>
@@ -50,18 +50,25 @@
 				</ul>
 
 				<ul>
-					{% assign grouped = site.docs | group_by: 'category' %}
-					{% for group in grouped %}
-						<li class="nav-item top-level {% if group.name == page.category %}current{% endif %}">
-							{% assign items = group.items | sort: 'order' %}
-							<a href="{{ site.baseurl }}{{ items.first.url }}">{{ group.name }}</a>
-							<ul>
-								{% for item in items %}
+					{% assign category_grouped = site.docs | group_by: 'category' %}
+					{% for category in category_grouped %}
+					<li class="nav-item top-level {% if category.name == page.category %}current{% endif %}">
+						<ul>
+						{% assign kind_grouped = category | group_by: 'kind' %}
+						{% for kind in kind_grouped %}
+							<a href="{{ site.baseurl }}{{ kind.first.url }}">{{ kind.name }}</a>
+							<li class="nav-item {% if kind.name == page.kind %}current{% endif %}">
+								<ul>
+									{% assign items = kind.items | sort: 'order' %}
+									{% for item in items %}
 									<li class="nav-item {% if item.url == page.url %}current{% endif %}"><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
 									</li>
-								{% endfor %}
-							</ul>
-						</li>
+									{% endfor %}
+								</ul>
+							</li>
+						{% endfor %}
+						</ul>
+					</li>
 					{% endfor %}
 				</ul>
 
