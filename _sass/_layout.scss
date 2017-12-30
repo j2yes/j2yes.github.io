@@ -260,6 +260,12 @@ nav > ul {
 		font-weight: 600;
 		padding-left: $space;
 	}
+
+	&.second-level > a {
+		line-height: 1.5;
+		font-weight: 600;
+		padding-left: $space * 1.5;
+	}
 }
 
 .settings-panel-example {
