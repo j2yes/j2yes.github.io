@@ -1,8 +1,8 @@
 ---
 title: prototype app 1
 category: ionic-2
-kind : it
-order: 4
+kind : prototype
+order: 2
 comments: true
 # other options
 ---

@@ -1,7 +1,7 @@
 ---
 title: 매출채권 관리 실무
 category: study
-kind : it
+kind : finance
 order: 1
 comments: true
 # other options

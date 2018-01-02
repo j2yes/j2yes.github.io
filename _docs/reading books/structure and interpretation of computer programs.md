@@ -1,7 +1,7 @@
 ---
 title: 컴퓨터 프로그램의 구조와 해석 
 category: reading books
-kind : it
+kind : programming
 comments: true
 order: 1
 ---

@@ -1,7 +1,7 @@
 ---
 title: 네트워크 관리사
 category: study
-kind : it
+kind : network
 comments: true
 order: 3
 ---
