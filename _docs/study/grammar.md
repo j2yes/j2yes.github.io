@@ -217,24 +217,24 @@ order: 1
 #### 능동태 / 수동태와 가정법
 
 - 자동사 (수동이 될 수 없다)
-  `````sbtshell
+  ```sbtshell
   work(=function), rise, exist, arrive
   happen = occur = take place
   (dis)appear, consist of, proceed
-  ````
+  ```
 - 4형식 동사 (-에게 -을 주다)
-  ````sbtshell
+  ```sbtshell
   give = offer = grant = award = send
-  * be + given + O
-  ````
+  be + given + O
+  ```
 - 5형식 동사
-  ````sbtshell
+  ```sbtshell
   ask, require, advise, invite, encourage
   expect, want = would like to
   enable, allow, permit
   cause, force
   * V + O + O.C -> be + pp + to V
-  ````
+  ```
 ##### 능동태와 수동태 구별
 - 동사 뒤 목적어가 있으면 능동태 목적어가 없으면 수동태
   - be + pp + ~~O~~
