@@ -310,6 +310,72 @@ be permitted to V, be prepared to V
 
 #### to 부정사
 
+to + R 
+- 문장에서 명사 형용사 부사 역할을 한다.
+- 목적어와 보어를 가질 수 있고 부사 수식을 받는다.
+- 의미상 주어가 필여한 경우 to 앞에 `for + 명사`, `for + 대명사의 목적격`을 쓴다.
+
+```
+~하기 위하여
+1) To V ~, S + V ~
+=> in order to V, so as to V
+2) 완벽한 문장 to V / Ving / pp
+------------------------------
+* be + 감정동상 pp + to V (~해서)
+```
+
+##### to 부정사를 O 또는 O.C로 갖는 3/5형식 동사
+
+```
+동사 + 목적어(to 부정사)
+want to, desire to, wish to, hope to,
+need to, expect to, plan to, decide to,
+ask to, refuse to, manage to, afford to,
+fail to
+```
+
+```
+동사 + 목적어 + 목적격 보어(to 부정사) = v + o + to v => be + pp + to v
+want o to, need o to, expect o to,
+invite o to, encourage o to, ask o to, 
+require o to, allow o to, enable o to,
+permit o to, advise o to, remind o to,
+schedule o to, order o to
+```
+
+##### to 부정사를 취하는 명사
+
+```
+명사 + to 부정사
+chance to, opportunity to, effort to, need to,
+decision to, plan to, right to, time to,
+way to, ability to
+```
+
+##### to 부정사를 취하는 형용사
+
+```
+형용사 + to 부정사
+be able to, be willing to, be ready to,
+be likely to, be eager to, be pleased to,
+be easy to, be difficult to
+```
+
+##### 원형 부정사를 목적격 보어로 갖는 동사
+
+```
+사역동사(시키다) : make, let, have + O + R
+=> let + O + R
+=> have / make + O + R : O 가 하도록
+=> have / make + O + PP : O 가 되도록
+=> get + O + to V : O 가 하도록
+=> get + O + PP : O 가 되도록
+준사역동사 : help + O + (to) + V
+=> help + (to) + V : to V 하는 것을 돕다.
+=> help + O + (to) + V : O가 to V 하는 것을 돕다.
+지각동사 : see, hear, watch, notice + O + R / Ring(현재분사)
+```
+
 #### 동명사
 
 #### 분사
