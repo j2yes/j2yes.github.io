@@ -378,6 +378,86 @@ be easy to, be difficult to
 
 #### 동명사
 
+- 동사원형 + ing
+- 목적어와 보어를 가질 수 있고 부사 수식을 받음
+
+##### 동명사 역할과 자리
+
+- 주어, 동사의 목적어, 전치사의 목적어, 보어
+
+##### 동명사의 의미상 주어
+
+- 동명사 앞에 명사나 대명사의 소유격 사용
+- `His reporting was sloppy, we know.` 
+
+##### 동명사를 목적어로 갖는 동사
+
+```
+enjoy -ing, suggest -ing, recommend -ing, consider -ing,
+avoid -ing, mind -ing (꺼리다), postpone -ing, finish -ing,
+discontinue -ing 
+```
+
+##### 동명사와 명사 구분
+
+- 동명사는 목적어를 갖는다.
+- 동명사는 부정관사가 올 수 없다
+
+##### 명사화된 동명사
+
+```
+advertising(광고업) advertisement(광고),
+housing(숙소/주거) house(집),
+spending(소비/지출) spend(지출/비용),
+funding(자금조달) fund(자금),
+marketing(마케팅) market(시장),
+seating(좌석배치) seat(좌석),
+ticketing(발권) ticket(티켓),
+covering(덮개) coverage(보상 범위),
+opening(공석) open(야외),
+meaning(의미) means(방법),
+understanding(이해),
+beginning(초기)
+```
+
+##### 동명사 관련 표현
+
+동명사 포함 표현
+```
+on -ing : ~하자마자
+be busy (in) -ing : ~하느라 바쁘다.
+keep (on) -ing : 계속 ~하다.
+be worth -ing : ~할 가치가 있다
+spend + 시간/돈 + -ing : 시간/돈을 ~하는데 쓰다.
+have difficulty(trouble, a problem) (in) + -ing : ~하는데 어려움을 겪다. 
+```
+
+잔치사 to + 동명사 표현
+```
+contribute to -ing : ~에 공헌하다.
+be committed to -ing : ~에 전념하다.
+look forward to -ing : ~하기를 고대하다.
+be dedicated to -ing : ~에 헌신적이다.
+lead to -ing : ~의 원인이 되다.
+be devoted to -ing : ~에 헌신적이다
+object to -ing : ~에 반대하다.
+be used to -ing : ~에 익숙하다. / used to R ~하곤했다.
+```
+
+기타표현
+```
+when it comes to (명사/ing) = about
+remember/forget to v (~할 것을)
+remember/forget v-ing (~했던 것을)
+```
+
+##### 동명사의 시제와 태
+
+- 시제 : v-ing + O (~하는것) / having pp + O (~했던것) 
+- 태 : being pp(되는것) / having been pp(됐던것)
+
+
+
 #### 분사
 
 ### 4. 품사
@@ -406,3 +486,5 @@ be easy to, be difficult to
   remind
   promise / tell
   ````
+- 전치사 다음 to 부정사 오지 않음
+- by + -ing : ~함으로써
