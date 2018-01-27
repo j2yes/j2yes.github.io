@@ -456,9 +456,79 @@ remember/forget v-ing (~했던 것을)
 - 시제 : v-ing + O (~하는것) / having pp + O (~했던것) 
 - 태 : being pp(되는것) / having been pp(됐던것)
 
-
-
 #### 분사
+
+- 동사원형 + -ing, 동사원형 + -ed로 문장에서 형용사 역할
+- 동사 성질을 가지고 있어 목적어와 보어를 가질 수 있고 부사 수식을 받음
+- 분사구문은 부사절이 축약된 구문, 문장에서 부사 역할을 함
+
+###### 분사 역할과 자리
+
+- 명사 앞이나 뒤에서 형용사 역할
+- 주격 보어나 목적격 보어
+```
+(1) 명사 앞이나 뒤 : 명사 뒤 v-ing는 동명사가 아님
+(2) be + 분사
+(3) keep / make + O + 분사
+    find / consider
+```
+
+##### 분사구문
+
+- 분사구문은 부사절 `부사절 접속사 + 주어 + 동사` 이 축약된 구문으로 `(접속사 +) 분사` 형태를 가진다
+
+분사구문 형태
+
+```
+1) 부사절 접속사 생략, 부사절 주어 생략 (주절 주어와 같은 경우만 생략)
+부/접 + S + V1 ~, S + V2 ~
+V1-ing (S가 ~하는)
+pp (S가 ~된)
+
+2) after / before : 전치사, 접속사 둘다 가능하기 때문에 구분이 어려움
+[after / before] + ving ~ (S가 ~한 후에)
+[after / before] + being + pp (S가 ~된 후에) : being이 생략되면 무조건 접속사
+
+3)
+If pp (~된다면)
+uless pp (~되지 않는다면)
+as pp (~된 대로)
+
+4)
+(접속사) [v-ing / pp], S
+
+5)
+S + V, [V-ing + O / pp]
+```
+
+##### 현재분사 과거분사 혼동하기 쉬운 표현
+
+```
+현재분사 + 명사
+leading brands
+leading newspaper
+opening remarks
+promising member (유망한 멤버)
+existing equipment
+lasting impression
+improving techniques
+presiding officer
+missing luggage
+rising rents
+
+과거분사 + 명사
+preferred vendors
+proposed project
+qualified candidate
+experienced technician
+detailed marketing plan
+written permission
+limited time
+attached document
+damaged merchandise
+repeated requests
+```
+
 
 ### 4. 품사
 
