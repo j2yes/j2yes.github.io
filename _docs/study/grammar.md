@@ -529,10 +529,87 @@ damaged merchandise
 repeated requests
 ```
 
-
 ### 4. 품사
 
 #### 명사
+
+- 명사는 주어 목적어 보어 자리에 온다.
+  - 동사의 목적어
+  - 전치사의 목적어
+- 명사는 관사, 소유격 형용사 뒤에 온다 : a / an / the 소유격 + 명사
+
+##### 가산명사와 불가산명사
+
+```
+가산명사
+approach
+challenge
+compliment
+detail
+increase
+medicine
+profit
+reservation
+request
+requirement
+statement
+success
+사람(v + [-er / -ee])
+제품
+돈 (money, cash 제외)
+
+불가산명사
+appreciation
+approval
+clarity
+clothing
+construction
+compensation
+confirmation
+maintenance
+operation
+participation
+performance
+satisfaction
+information
+news
+money(cash)
+access
+equipment
+planning
+
+수량 표현
+가산 단수 명사 앞 : one / each / every / another
+가산 복수 명사 앞 : (a) few / many / both / numerous
+불가산 명사 앞 : (a) little / less / much
+가산 복수, 불가산 단수 명사 앞 : all / more / most / some
+```
+
+##### 관용적 복합 명사
+
+```
+customer satisfaction
+contract negotiation
+dining experience
+housing development
+keynote speaker
+living expenses
+profit losses
+repair work
+retail sales
+retirement celebration
+sales increase
+sales representative
+savings plan
+shipping charge
+standard procedure
+weather forecast
+safety standards
+safety regulations
+```
+
+
+
 
 #### 대명사
 
@@ -558,3 +635,11 @@ repeated requests
   ````
 - 전치사 다음 to 부정사 오지 않음
 - by + -ing : ~함으로써
+- other
+  ```
+  another : an + other => another 뒤에 셀 수 있는 단수명사
+  other => other 뒤 복수명사 or 셀 수 없는 단수 명사
+  the other => a 와 the의 차이와 비슷
+  others / the other : the other은 나머지로 해석
+  one another : 서로
+  ```
