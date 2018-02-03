@@ -3,7 +3,7 @@ title: 네트워크 관리사
 category: study
 kind : network
 comments: true
-order: 3
+order: 1
 ---
 
 #### 들어가며
