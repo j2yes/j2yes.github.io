@@ -62,8 +62,10 @@
 								<a href="{{ site.baseurl }}{{ items.first.url }}">{{ kind.name }}</a>
 								<ul>
 									{% for item in items %}
+									{% if !item.hidden %}
 									<li class="nav-item {% if item.url == page.url %}current{% endif %}"><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
 									</li>
+									{% endif %}
 									{% endfor %}
 								</ul>
 							</li>
