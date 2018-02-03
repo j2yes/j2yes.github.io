@@ -608,13 +608,130 @@ safety standards
 safety regulations
 ```
 
-
-
-
 #### 대명사
+
+대명사는 명사를 대신하여 쓰며 인칭대명사, 재귀대명사, 지시대명사, 부정대명사로 나눌 수 있다
+
+##### 인칭대명사
+
+```
+        | 주격 | 소유격 | 목적격 | 소유대명사(~의 것) |
+- 1인칭
+  - 단수 : I / my / me / mine
+  - 복수 : we / our / us / ours
+- 2인칭 
+  - 단수 : you / your / you / yours
+  - 복수 : you / your / you / yours
+- 3인칭
+  - 단수(남성) : he / his / him / his
+  - 단수(여성) : she / her / her / hers
+  - 단수(사물) : it / its / it / -
+  - 복수 : they / their / them / theirs
+```
+
+##### 재귀대명사
+
+- 목적어가 주어와 같은 대상일 경우 모적어 자리에 재귀대명사가 온다. (생략 불가능)
+- 주어나 목적어를 강조할 때 강조하는 말 바로 뒤 또는 문장 맨 뒤에 재귀대명사가 온다. (생략 가능)
+  - himself / herself...
+
+재귀대명사 관용표현
+
+```
+by oneself
+for oneself
+on itself
+in itself
+```
+
+##### 지시대명사 / 지시형용사
+
+- 지시대명사
+  - that : 단수 명사 
+  - those : 복수 명사
+- 대명사는 수식을 받지 않는다.
+  - that의 of 예외
+  - those 예외
+    - 관계절, 분사, 전치사구 수식을 받아 `~한 사람들`로 쓰임
+- 지시형용사 
+  - this / that : 단수 명사
+  - these / those : 복수 명사
+
+##### 부정대명사 / 부정형용사
+
+- some / any (몇몇의)
+  - some : 긍정문
+  - any : 부정문, 의문문, 조건문
+- one / another 
+  - one : 단수 가산 명사
+  - another : (또 다른 하나)단수 가산 명사
+- other(s) / the other(s)
+  - others : 다른 몇몇
+  - the others : 나머지 전부
+
+```
+one -> 1st
+another -> 2nd
+other -> only 형용사
+others -> 다른 몇몇 
+
+1) other + [가산복수 / 불가산]
+2) others (나머지) vs the others (나머지 전부)
+3) the others (나머지 전부) vs the other (나머지 하나)
+4) the other + [X / 가산단수 / 가산복수 / 불가산]
+```
 
 #### 형용사
 
+명사를 수식 또는 설명
+
+- 형용사 자리
+  - 명사 앞
+  - 주격 보어
+  - 목적격 보어
+- 수량 형용사
+  ```
+  가산 단수 명사 앞 : each / every
+  가산 복수 명사 앞 : (a) few / many
+  불가산 명사 앞 : (a) little / much
+  가산, 불가산 명사 모두 앞 : all / some
+  ```
+- be + 형용사 숙어
+  ```
+  be about to
+  be available to
+  be available for / in / at
+  be aware of
+  be capable of
+  be eligible for / to
+  be familiar with
+  be responsible for
+  be skilled in / at
+  be subject to : ~을 받다
+  ```
+- 형용사 어휘 구분
+  - ~tive vs v-ing vs pp
+    - 해석
+    - 원래 형용사
+  - ly 빠지면 형용사
+- 혼동하기 쉬운 형용사
+  ```
+  advisable / advisory
+  beneficial / beneficent
+  comparable / comparative
+  considerable / considerate
+  economic / economical
+  favorable / favorite
+  impressive / impressed
+  informative / informed
+  preventive / preventable
+  profitable / proficient
+  reliable / reliant
+  responsible / responsive
+  successful / successive
+  understanding / understandable
+  ```
+  
 #### 부사
 
 #### 전치사
