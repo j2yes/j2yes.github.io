@@ -735,6 +735,64 @@ others -> 다른 몇몇
   
 #### 부사
 
+부사는 형용사 부사 동사 구 절 문장을 수식한다.
+
+##### 부사자리
+```
+동사, 형용사 수식
+1) S + ~ly + V ~
+2) S + work + ~ly
+* 부사 + (부사) + 형용사 + 명사
+3) 조동사 + ~ly + 동사원형
+- be +  ~ly + ing + ~ly
+- be +  ~ly + pp + ~ly
+- have +  ~ly + pp + ~ly
+- deal +  ~ly + with + ~ly
+- to +  ~ly + V + ~ly
+4) 문두 or 문미
+~ly , S + V ~ + ~ly
+```
+
+##### 부사의 종류
+- 시간부사
+  - already : 긍정문
+  - still : 긍정문, 의문문, 부정문
+  - yet : 부정문(아직), 의문문(이미, 벌써)
+  - ago
+  - once : 과거시점
+  - later
+  - since : 과거시점부터 지금까지
+- 빈도부사 : 일반동사 앞 / 조동사 or be동사 뒤
+  ```
+  always, frequently, usually, once, sometimes, 
+  hardly/rarely/seldom/scarcely/barely,
+  never
+  ```
+- 접속부사
+  ```
+  besides, moreover, furthermore, therefore,
+  however, meanwhile, (or)else + [부/S+V], otherwise,
+  then, nevertheless/nonetheless
+  ```
+- 강조부사
+  - only / just
+  - much : 비교급 강조
+  - even : 비교급 강조 / 단어 or 구 강조
+  - so / very
+  - too : 부정적 의미
+
+##### 혼동하기 쉬운 부사
+
+```
+also : 문장 처음 또는 중간
+as well : 문장 끝
+
+hard / hardly
+high / highly
+late / lately
+most / mostly
+```
+
 #### 전치사
 
 ### 5. 접속사와 절
@@ -760,4 +818,13 @@ others -> 다른 몇몇
   the other => a 와 the의 차이와 비슷
   others / the other : the other은 나머지로 해석
   one another : 서로
+  ```
+- have yet to V : 아직 ~하지 못하다.
+- 비교 강조
+  ```
+  much + [~er/more/less]
+  even
+  far
+  still
+  a lot
   ```
