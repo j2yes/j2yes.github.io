@@ -4,6 +4,7 @@ category: study
 kind : finance
 order: 1
 comments: true
+hidden : false
 # other options
 ---
 

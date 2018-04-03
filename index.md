@@ -1,5 +1,5 @@
 ---
-title: prototype a-z
+title: be normal
 # comments: true
 # other options
 ---
