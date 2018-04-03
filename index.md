@@ -1,5 +1,5 @@
 ---
-title: be normal
+title: how to use markdown
 # comments: true
 # other options
 ---
