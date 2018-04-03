@@ -72,24 +72,34 @@ https://www.joshmorony.com/adding-responsive-charts-graphs-to-ionic-2-applicatio
 - 기준금리(http://www.bok.or.kr/baserate/baserateList.action?menuNaviId=1927)
 
 중간에 소진율을 보여주기 위한 progress bar 도 추가하고..
-https://www.joshmorony.com/build-a-simple-progress-bar-component-in-ionic-2/
+```
+#https://www.joshmorony.com/build-a-simple-progress-bar-component-in-ionic-2/
 ionic g component ProgressBar
+```
 
 상세화면을 띄우기 위해서 in-app-browser도 설치
-https://ionicframework.com/docs/native/in-app-browser/
+```
+#https://ionicframework.com/docs/native/in-app-browser/
 ionic cordova plugin add cordova-plugin-inappbrowser
 npm install --save @ionic-native/in-app-browser
+```
 
 대충 화면 작업은 끝났습니다. 처음 예상한 화면이랑 조금 다르긴 한데, 유사한 결과물을 만들었습니다.
 (통계화면과 목록화면을 나누고 사이트별 검색은 셀렉트박스를 이용했습니다.)
 
+##### 딜 목록화면
+
 ![딜 목록화면](/assets/ionic/deal_list.webp "딜 목록화면")
+
+##### 통계화면
+
 ![통계화면](/assets/ionic/p2p_statistics.webp "통계화면")
 
 #### api 만들기
 node를 이용해서 api 서버를 만들고, 스크랩핑할 수 있도록 작업합니다.
 
 필수정보만 디비스키마를 만들어서 필요한 정보를 저장
+```sql
 CREATE TABLE `p2p`.`deal` (
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '딜 아이디 ',
   `siteCode` VARCHAR(45) CHARACTER SET 'utf8' NOT NULL,
@@ -110,3 +120,4 @@ CREATE TABLE `p2p`.`site` (
   `siteUrl` VARCHAR(500) CHARACTER SET 'utf8' NOT NULL COMMENT '사이트 주소 ',
   `siteLogo` VARCHAR(500) CHARACTER SET 'utf8' NOT NULL COMMENT '사이트 로고 ',
   PRIMARY KEY (`siteCode`));
+```
