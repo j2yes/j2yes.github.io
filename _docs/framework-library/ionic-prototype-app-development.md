@@ -72,13 +72,13 @@ https://www.joshmorony.com/adding-responsive-charts-graphs-to-ionic-2-applicatio
 - 기준금리(http://www.bok.or.kr/baserate/baserateList.action?menuNaviId=1927)
 
 중간에 소진율을 보여주기 위한 progress bar 도 추가하고..
-```
+```sbtshell
 #https://www.joshmorony.com/build-a-simple-progress-bar-component-in-ionic-2/
 ionic g component ProgressBar
 ```
 
 상세화면을 띄우기 위해서 in-app-browser도 설치
-```
+```sbtshell
 #https://ionicframework.com/docs/native/in-app-browser/
 ionic cordova plugin add cordova-plugin-inappbrowser
 npm install --save @ionic-native/in-app-browser
