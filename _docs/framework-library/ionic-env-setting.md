@@ -75,8 +75,8 @@ npm install -g ios-deploy
 
 ### android 개발환경 만들기
 
-- android studio 설치하기 : https://developer.android.com/studio/install.html
-- ANDROID_HOME path 설정
+1. android studio 설치하기 : https://developer.android.com/studio/install.html
+2. ANDROID_HOME path 설정
 ```sbtshell
 #mac에서 설정 
 #~.bash_profile 파일에 설정하기
@@ -85,18 +85,7 @@ export ANDROID_TOOLS="/Users/username/Library/Android/sdk/tools"
 export ANDROID_PLATFORM_TOOLS="/Users/username/Library/Android/sdk/platform-tools"
 PATH=$PATH:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS
 ```
-
-> 에러[Error: Could not find gradle wrapper within Android SDK. Might need to update your Android SDK.
-> Looked here: /Users/jiseob/Library/Android/sdk/tools/templates/gradle/wrapper]나는경우
-> https://forum.ionicframework.com/t/error-could-not-find-gradle-wrapper-within-android-sdk-might-need-to-update-yo-ur-android-sdk/22056/15
-> 링크 참고해서 다운로드 받은 파일은 tools에 덮기
-
-> 에러[Error: android: Command failed with exit code 2]
-> 에뮬레이터 실행해 놓고, 빌드하기
-> 참고하기 : https://cordova.apache.org/docs/en/latest/guide/platforms/android/
-
-- android 가상 디바이스에서 실행하기
-
+3. android 가상 디바이스에서 실행하기
 ```sbtshell
 #가상 디바이스 목록보기
 adb devices
@@ -107,6 +96,15 @@ adb devices
 #특정 타겟에서 실행하기
 ionic run android --target=emulator-5554
 ```
+
+> 에러[Error: Could not find gradle wrapper within Android SDK. Might need to update your Android SDK.
+> Looked here: /Users/jiseob/Library/Android/sdk/tools/templates/gradle/wrapper]나는경우
+> https://forum.ionicframework.com/t/error-could-not-find-gradle-wrapper-within-android-sdk-might-need-to-update-yo-ur-android-sdk/22056/15
+> 링크 참고해서 다운로드 받은 파일은 tools에 덮기
+
+> 에러[Error: android: Command failed with exit code 2]
+> 에뮬레이터 실행해 놓고, 빌드하기
+> 참고하기 : https://cordova.apache.org/docs/en/latest/guide/platforms/android/
 
 ## 자주 사용하는 ionic command
 
