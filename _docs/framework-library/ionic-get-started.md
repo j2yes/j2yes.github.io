@@ -24,7 +24,8 @@ http://blog.ionic.io/navigating-lifecycle-events/
 예) hello-ionic/
 - hello-ionic.html
 - hello-ionic.ts
-```sbtshell
+
+```javascript
 import { Component } from '@angular/core';
 
 @Component({
@@ -43,24 +44,26 @@ export class HelloIonicPage {
 ### ionic navigation
 
 ionic은 navigationController를 이용해서 flexible하게 페이지를 이동할 수 있다.
+
 ```sbtshell
 #ion-nav 태그에 root로 지정된 페이지가 가장 상위 페이지
 <ion-nav [root]="rootPage"></ion-nav>
 ```
 
 페이지 이동 (push, pop)
-```sbtshell
+
+```javascript
 class OtherPage {
   constructor(public navCtrl: NavController) {}
 
-  #다른 페이지로 이동하기
+  //다른 페이지로 이동하기
   goToOtherPage() {
     //push another page onto the history stack
     //causing the nav controller to animate the new page in
     this.navCtrl.push(OtherPage);
   }
 
-  #뒤로가기 (ion-navbar 태그를 페이지에 포함하고 있는 경우, 백버튼에 대한 이벤트 처리가 자동으로 처리됨)
+  //뒤로가기 (ion-navbar 태그를 페이지에 포함하고 있는 경우, 백버튼에 대한 이벤트 처리가 자동으로 처리됨)
   goBack() {
     this.navCtrl.pop();
   }
@@ -82,15 +85,17 @@ http 를 이용하는 방법은 두가지
 - 차이점 : https://forum.ionicframework.com/t/what-is-the-difference-between-angular-and-native-http/73095
 
 @ionic-native/http 사용
+
 ```sbtshell
 #설치
 ionic plugin add --save cordova-plugin-http
 npm install --save @ionic-native/http
+```
 
-
-#provider에 추가하기
-#app.module.ts 파일에 provider로 추가하고 사용해야 함
-...
+```javascript
+// provider에 추가하기
+// app.module.ts 파일에 provider로 추가하고 사용해야 함
+// ...
 
 providers: [
     StatusBar,
@@ -99,16 +104,17 @@ providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 
-...
+// ...
 ```
 
 @angular/http 사용
-```sbtshell
-#app.module.ts 파일에 모듈 추가하고 사용해야 함
-...
+
+```javascript
+// app.module.ts 파일에 모듈 추가하고 사용해야 함
+// ...
 import { HttpModule } from '@angular/http';
 
-...
+// ...
 imports: [
   BrowserModule,
   HttpModule,
@@ -125,7 +131,7 @@ imports: [
 whitelist 설정
 - http://www.gajotres.net/ionic-2-making-rest-http-requests-like-a-pro/
 
-```
+```sbtshell
 cordova plugin add cordova-plugin-whitelist
 ```
 
@@ -147,6 +153,7 @@ https://www.typescriptlang.org/docs/handbook/basic-types.html
 ### angular2 기본 문법
 
 반복문
+
 ```angular2html
 <li *ngFor="let hero of heroes” (click)="onSelect(hero)>
     <span class="badge">{{hero.id}}</span> {{hero.name}}
@@ -154,6 +161,7 @@ https://www.typescriptlang.org/docs/handbook/basic-types.html
 ```
 
 조건문
+
 ```angular2html
 <div *ngIf="selectedHero">
   <h2>{{selectedHero.name}} details!</h2>
@@ -166,6 +174,7 @@ https://www.typescriptlang.org/docs/handbook/basic-types.html
 ```
 
 동적 스타일
+
 ```angular2html
 <li *ngFor="let hero of heroes"
   [class.selected]="hero === selectedHero"
