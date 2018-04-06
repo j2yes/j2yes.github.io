@@ -87,13 +87,13 @@ PATH=$PATH:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS
 ```
 3. android 가상 디바이스에서 실행하기
 ```sbtshell
-#가상 디바이스 목록보기
+# 가상 디바이스 목록보기
 adb devices
 
-##결과목록
-#emulator-5554   device
+# 결과목록
+# emulator-5554   device
 
-#특정 타겟에서 실행하기
+# 특정 타겟에서 실행하기
 ionic run android --target=emulator-5554
 ```
 
