@@ -77,7 +77,7 @@ npm install -g ios-deploy
 
 1. android studio 설치하기 : https://developer.android.com/studio/install.html
 2. ANDROID_HOME path 설정
-```sbtshell
+```
 #mac에서 설정 
 #~.bash_profile 파일에 설정하기
 export ANDROID_HOME="/Users/username/Library/Android/sdk"
@@ -86,7 +86,7 @@ export ANDROID_PLATFORM_TOOLS="/Users/username/Library/Android/sdk/platform-tool
 PATH=$PATH:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS
 ```
 3. android 가상 디바이스에서 실행하기
-```sbtshell
+```
 # 가상 디바이스 목록보기
 adb devices
 
