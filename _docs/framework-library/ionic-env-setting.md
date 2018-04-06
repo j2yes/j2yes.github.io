@@ -96,6 +96,7 @@ PATH=$PATH:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS
 > 참고하기 : https://cordova.apache.org/docs/en/latest/guide/platforms/android/
 
 - android 가상 디바이스에서 실행하기
+
 ```sbtshell
 #가상 디바이스 목록보기
 adb devices
