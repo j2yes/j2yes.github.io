@@ -96,34 +96,3 @@ adb devices
 # 특정 타겟에서 실행하기
 ionic run android --target=emulator-5554
 ```
-
-> 에러[Error: Could not find gradle wrapper within Android SDK. Might need to update your Android SDK.
-> Looked here: /Users/jiseob/Library/Android/sdk/tools/templates/gradle/wrapper]나는경우
-> https://forum.ionicframework.com/t/error-could-not-find-gradle-wrapper-within-android-sdk-might-need-to-update-yo-ur-android-sdk/22056/15
-> 링크 참고해서 다운로드 받은 파일은 tools에 덮기
-
-> 에러[Error: android: Command failed with exit code 2]
-> 에뮬레이터 실행해 놓고, 빌드하기
-> 참고하기 : https://cordova.apache.org/docs/en/latest/guide/platforms/android/
-
-## 자주 사용하는 ionic command
-
-```sbtshell
-#특정 플랫폼으로 실행하기
-#실제 디바이스에 설치하기 (debugging & developer mode 켜고 usb로 연결한 후 사용)
-#https://developer.android.com/studio/run/device.html#developer-device-options
-ionic cordova run android --device
-ionic cordova build android --release
-ionic cordova platform ls
-
-# browser에서 실행하기
-ionic serve 
-ionic run browser
-
-##위의 두 커맨드는 브라우저에서 실행되지만 네이티브 기능을 사용하려면 밑의 커맨드를 이용해야 함
-#(plaform에 browser 추가 필요)
-#https://github.com/driftyco/ionic-native/issues/403
-
-#ionic serve runs your app as a website (meaning it doesn't have any Cordova capabilities)
-#ionic run browser runs your app in the Cordova browser platform, which will inject cordova.jsand any plugins that have browser capabilities
-```
