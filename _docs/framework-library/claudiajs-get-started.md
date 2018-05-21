@@ -75,6 +75,8 @@ exports.myHandler = async function(event, context) {
 
 make file `.aws/credentials`  
 
+> first line is profile name.
+
 ```jshelllanguage
 [claudia]
 aws_access_key_id = YOUR_ACCESS_KEY
@@ -87,13 +89,14 @@ seoul region is `ap-northeast-2`.
  
 ```jshelllanguage
 # create lambda
-claudia create --region ap-northeast-2 --handler lambda.myHandler
+claudia create --region ap-northeast-2 --handler lambda.myHandler --profile claudia
 ```
 
 ### 6. invoke lambda
 
 ```jshelllanguage
-claudia test-lambda
+#'test-' prefix is required.
+claudia test-lambda --profile claudia
 ```
 
 ### 7. update lambda with npm run command
@@ -103,9 +106,8 @@ package.json
 ```json
 ...
   "scripts": {
-    "start": "claudia create --name using-npm-modules --region us-east-1 --handler main.handler",
-    "test": "claudia test-lambda",
-    "deploy": "claudia update"
+    "test": "claudia test-lambda --profile claudia",
+    "deploy": "claudia update --profile claudia"
   },
 ...
 ```
