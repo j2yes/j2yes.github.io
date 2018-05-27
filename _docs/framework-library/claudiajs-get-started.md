@@ -23,7 +23,7 @@ comments: true
 # global installation
 npm install claudia -g
 
-#check installation
+# check installation
 claudia -version
 ```
 
@@ -54,8 +54,7 @@ exports.handler = function(event, context, callback) {
     console.log('logStreamName =', context.log_stream_name);
     console.log('clientContext =', context.clientContext);
     if (typeof context.identity !== 'undefined') {
-        console.log('Cognito
-        identity ID =', context.identity.cognitoIdentityId);
+        console.log('Cognitoidentity ID =', context.identity.cognitoIdentityId);
     }    
     callback(null, event.key1); // Echo back the first key value
     // or
@@ -65,13 +64,15 @@ exports.handler = function(event, context, callback) {
 exports.myHandler = async function(event, context) {
    console.log("value1 = " + event.key1);
    console.log("value2 = " + event.key2);  
-   return "some success message”;
+   return "some success message";
    // or 
    // throw new Error(“some error type”); 
 } 
 ```
 
-### 4. setting AWS IAM : https://claudiajs.com/tutorials/installing.html / https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html
+### 4. setting AWS IAM 
+- https://claudiajs.com/tutorials/installing.html 
+- https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html
 
 make file `.aws/credentials`  
 
