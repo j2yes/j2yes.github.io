@@ -4,7 +4,15 @@ title: how to use markdown
 # other options
 ---
 
+[TOC]
+
 ## markdown으로 글쓰기
+
+### 목차만들기
+
+```
+[TOC]
+```
 
 ### 제목을 지정해보자
 
@@ -110,6 +118,16 @@ ___
 2. 두번째
 3. 세번째
 
+### 체크박스 
+
+```
+- [ ] 리스트1
+- [X] 리스트2
+```
+
+- [ ] 리스트1
+- [X] 리스트1
+
 ### 텍스트에 효과주기
 
 ```
@@ -139,8 +157,46 @@ ___
 
 `keyword`
 
+### 태그만들기
+
+@(Sample notebook)[Marxico|Manual|Markdown]
+
+### LaTeX expression
+$$	x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
+
+### Table
+| Item      |    Value | Qty  |
+| :-------- | --------:| :--: |
+| Computer  | 1600 USD |  5   |
+| Phone     |   12 USD |  12  |
+| Pipe      |    1 USD | 234  |
+
+### Diagrams
+#### Flow charts
+```flow
+st=>start: Start
+e=>end
+op=>operation: My Operation
+cond=>condition: Yes or No?
+
+st->op->cond
+cond(yes)->e
+cond(no)->op
+```
+#### Sequence diagrams 
+```sequence
+Alice->Bob: Hello Bob, how are you?
+Note right of Bob: Bob thinks
+Bob-->Alice: I am good thanks!
+```
+
+> **Note:** You can find more information:
+
+> - about **Sequence diagrams** syntax [here][http://bramp.github.io/js-sequence-diagrams/],
+> - about **Flow charts** syntax [here][http://adrai.github.io/flowchart.js/].
+
 ### 참고사이트
 * https://sourceforge.net/p/collapse/wiki/markdown_syntax/
 * http://commonmark.org/help/tutorial/index.html
 * https://guides.github.com/features/mastering-markdown/
-
+* http://marxi.co/
