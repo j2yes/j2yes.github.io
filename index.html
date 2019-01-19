@@ -374,6 +374,393 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://j2yes.github.io/2019/01/19/claudiajs-rest-api/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="j2yes">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="normal development">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/01/19/claudiajs-rest-api/" class="post-title-link" itemprop="https://j2yes.github.io/index.html">claudiajs-rest-api</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-01-19 22:22:17 / Modified: 22:29:05" itemprop="dateCreated datePublished" datetime="2019-01-19T22:22:17+09:00">2019-01-19</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/claudiajs/" itemprop="url" rel="index"><span itemprop="name">claudiajs</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- 728x90 -->
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-2730756420121198" data-ad-slot="5502918267"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="claudiajs-https-claudiajs-com"><a href="#claudiajs-https-claudiajs-com" class="headerlink" title="claudiajs : https://claudiajs.com"></a>claudiajs : <a href="https://claudiajs.com" target="_blank" rel="noopener">https://claudiajs.com</a></h3><ol>
+<li>make project</li>
+<li>install claudia api module</li>
+<li>modify package.json script command</li>
+<li>make api.js file</li>
+<li>make api gateway</li>
+<li>example code</li>
+</ol>
+<h3 id="make-lambda-project"><a href="#make-lambda-project" class="headerlink" title="make lambda project"></a>make lambda project</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir example</span><br><span class="line">cd example</span><br><span class="line">npm init</span><br></pre></td></tr></table></figure>
+<h3 id="install-claudia-api-module-https-claudiajs-com-claudia-api-builder-html"><a href="#install-claudia-api-module-https-claudiajs-com-claudia-api-builder-html" class="headerlink" title="install claudia api module : https://claudiajs.com/claudia-api-builder.html"></a>install claudia api module : <a href="https://claudiajs.com/claudia-api-builder.html" target="_blank" rel="noopener">https://claudiajs.com/claudia-api-builder.html</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install claudia-api-builder -S</span><br></pre></td></tr></table></figure>
+<h3 id="modify-package-json-script-command"><a href="#modify-package-json-script-command" class="headerlink" title="modify package.json script command"></a>modify package.json script command</h3><p>package.json<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">  "scripts": &#123;</span><br><span class="line">    "start": "claudia create --name rest-api-test --region ap-northeast-2 --api-module api --profile claudia",</span><br><span class="line">    "deploy": "claudia update --profile claudia"</span><br><span class="line">  &#125;,</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<h3 id="make-a-api-js-file"><a href="#make-a-api-js-file" class="headerlink" title="make a api.js file :"></a>make a api.js file :</h3><ul>
+<li><a href="https://github.com/claudiajs/claudia-api-builder/blob/master/docs/api.md#api-definition-syntax" target="_blank" rel="noopener">https://github.com/claudiajs/claudia-api-builder/blob/master/docs/api.md#api-definition-syntax</a></li>
+<li><a href="https://github.com/claudiajs/claudia-api-builder/blob/4f5c30df0365812765806ae2f9fd97e7a1287ed9/docs/api.md" target="_blank" rel="noopener">https://github.com/claudiajs/claudia-api-builder/blob/4f5c30df0365812765806ae2f9fd97e7a1287ed9/docs/api.md</a></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ApiBuilder = <span class="built_in">require</span>(<span class="string">'claudia-api-builder'</span>),</span><br><span class="line">	api = <span class="keyword">new</span> ApiBuilder(),</span><br><span class="line">	superb = <span class="built_in">require</span>(<span class="string">'superb'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = api;</span><br><span class="line"></span><br><span class="line">api.get(<span class="string">'/greet'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">request</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> request.queryString.name + <span class="string">' is '</span> + superb();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="make-api-gateway-https-claudiajs-com-tutorials-hello-world-api-gateway-html"><a href="#make-api-gateway-https-claudiajs-com-tutorials-hello-world-api-gateway-html" class="headerlink" title="make api gateway : https://claudiajs.com/tutorials/hello-world-api-gateway.html"></a>make api gateway : <a href="https://claudiajs.com/tutorials/hello-world-api-gateway.html" target="_blank" rel="noopener">https://claudiajs.com/tutorials/hello-world-api-gateway.html</a></h3><p>execute command</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#claudia create --name [lambda function name, api gateway name] --region [region name] --api-module [main javascript file name] --profile [profile name]</span><br><span class="line">npm run start</span><br></pre></td></tr></table></figure>
+<p>you can see below console as result</p>
+<p>saving configuration<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"lambda"</span>: &#123;</span><br><span class="line">    <span class="attr">"role"</span>: <span class="string">"rest-api-test-executor"</span>,</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"rest-api-test"</span>,</span><br><span class="line">    <span class="attr">"region"</span>: <span class="string">"ap-northeast-2"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"api"</span>: &#123;</span><br><span class="line">    <span class="attr">"id"</span>: <span class="string">"XXXXXXXX"</span>,</span><br><span class="line">    <span class="attr">"module"</span>: <span class="string">"api"</span>,</span><br><span class="line">    <span class="attr">"url"</span>: <span class="string">"https://XXXXXXXX.execute-api.ap-northeast-2.amazonaws.com/latest"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>you can connect to <code>api.url</code></p>
+<h3 id="example-code"><a href="#example-code" class="headerlink" title="example code"></a>example code</h3><p><a href="https://github.com/j2yes/lambda-rest-claudia" target="_blank" rel="noopener">github</a></p>
+<h3 id="인증관련-Reference"><a href="#인증관련-Reference" class="headerlink" title="인증관련 Reference"></a>인증관련 Reference</h3><ul>
+<li>카카오 : <a href="https://github.com/bskim/gamingonaws2017_serverless" target="_blank" rel="noopener">https://github.com/bskim/gamingonaws2017_serverless</a></li>
+<li>setting authorization to call api by aws iam : <a href="https://docs.aws.amazon.com/ko_kr/apigateway/latest/developerguide/api-gateway-control-access-using-iam-policies-to-invoke-api.html" target="_blank" rel="noopener">https://docs.aws.amazon.com/ko_kr/apigateway/latest/developerguide/api-gateway-control-access-using-iam-policies-to-invoke-api.html</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://j2yes.github.io/2019/01/19/claudiajs-get-started/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="j2yes">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="normal development">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/01/19/claudiajs-get-started/" class="post-title-link" itemprop="https://j2yes.github.io/index.html">claudiajs-get-started</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-01-19 22:20:19 / Modified: 22:29:05" itemprop="dateCreated datePublished" datetime="2019-01-19T22:20:19+09:00">2019-01-19</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/claudiajs/" itemprop="url" rel="index"><span itemprop="name">claudiajs</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- 728x90 -->
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-2730756420121198" data-ad-slot="5502918267"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="claudiajs-https-claudiajs-com"><a href="#claudiajs-https-claudiajs-com" class="headerlink" title="claudiajs : https://claudiajs.com"></a>claudiajs : <a href="https://claudiajs.com" target="_blank" rel="noopener">https://claudiajs.com</a></h3><ol>
+<li>install claudia</li>
+<li>execute command <code>npm init</code></li>
+<li>make lambda.js</li>
+<li>set aws credential on user root path</li>
+<li>create lambda function as command with profile</li>
+<li>invoke lambda with profile : <code>claudia test-lambda --profile claudia</code></li>
+<li>update lambda : <code>claudia update</code></li>
+<li>mongodb example project</li>
+</ol>
+<h3 id="install-claudia"><a href="#install-claudia" class="headerlink" title="install claudia"></a>install claudia</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># global installation</span><br><span class="line">npm install claudia -g</span><br><span class="line"></span><br><span class="line"># check installation</span><br><span class="line">claudia -version</span><br></pre></td></tr></table></figure>
+<h3 id="make-lambda-project"><a href="#make-lambda-project" class="headerlink" title="make lambda project"></a>make lambda project</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir example</span><br><span class="line">cd example</span><br><span class="line">npm init</span><br></pre></td></tr></table></figure>
+<h3 id="make-a-lambda-js-file-https-docs-aws-amazon-com-lambda-latest-dg-nodejs-prog-model-handler-html"><a href="#make-a-lambda-js-file-https-docs-aws-amazon-com-lambda-latest-dg-nodejs-prog-model-handler-html" class="headerlink" title="make a lambda.js file : https://docs.aws.amazon.com/lambda/latest/dg/nodejs-prog-model-handler.html"></a>make a lambda.js file : <a href="https://docs.aws.amazon.com/lambda/latest/dg/nodejs-prog-model-handler.html" target="_blank" rel="noopener">https://docs.aws.amazon.com/lambda/latest/dg/nodejs-prog-model-handler.html</a></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.normal example</span></span><br><span class="line">exports.myHandler = <span class="function"><span class="keyword">function</span>(<span class="params">event, context</span>) </span>&#123;</span><br><span class="line">   ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 2.you can use callback</span></span><br><span class="line">exports.handler = <span class="function"><span class="keyword">function</span>(<span class="params">event, context, callback</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//console.log('Received event:', JSON.stringify(event, null, 2));</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'value1 ='</span>, event.key1);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'value2 ='</span>, event.key2);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'value3 ='</span>, event.key3);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'remaining time ='</span>, context.getRemainingTimeInMillis());</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'functionName ='</span>, context.functionName);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'AWSrequestID ='</span>, context.awsRequestId);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'logGroupName ='</span>, context.log_group_name);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'logStreamName ='</span>, context.log_stream_name);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'clientContext ='</span>, context.clientContext);</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> context.identity !== <span class="string">'undefined'</span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Cognitoidentity ID ='</span>, context.identity.cognitoIdentityId);</span><br><span class="line">    &#125;    </span><br><span class="line">    callback(<span class="literal">null</span>, event.key1); <span class="comment">// Echo back the first key value</span></span><br><span class="line">    <span class="comment">// or</span></span><br><span class="line">    <span class="comment">// callback("some error type"); </span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 3.below is available on node 8.xx</span></span><br><span class="line">exports.myHandler = <span class="keyword">async</span> <span class="function"><span class="keyword">function</span>(<span class="params">event, context</span>) </span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">"value1 = "</span> + event.key1);</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">"value2 = "</span> + event.key2);  </span><br><span class="line">   <span class="keyword">return</span> <span class="string">"some success message"</span>;</span><br><span class="line">   <span class="comment">// or </span></span><br><span class="line">   <span class="comment">// throw new Error(“some error type”); </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="setting-AWS-IAM"><a href="#setting-AWS-IAM" class="headerlink" title="setting AWS IAM"></a>setting AWS IAM</h3><ul>
+<li><a href="https://claudiajs.com/tutorials/installing.html" target="_blank" rel="noopener">https://claudiajs.com/tutorials/installing.html</a> </li>
+<li><a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html" target="_blank" rel="noopener">https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html</a></li>
+</ul>
+<p>make file <code>.aws/credentials</code>  </p>
+<blockquote>
+<p>first line is profile name.</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[claudia]</span><br><span class="line">aws_access_key_id = YOUR_ACCESS_KEY</span><br><span class="line">aws_secret_access_key = YOUR_ACCESS_SECRET</span><br></pre></td></tr></table></figure>
+<h3 id="create-lambda-function"><a href="#create-lambda-function" class="headerlink" title="create lambda function"></a>create lambda function</h3><p>seoul region is <code>ap-northeast-2</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># create lambda</span><br><span class="line">claudia create --region ap-northeast-2 --handler lambda.myHandler --profile claudia</span><br></pre></td></tr></table></figure>
+<h3 id="invoke-lambda"><a href="#invoke-lambda" class="headerlink" title="invoke lambda"></a>invoke lambda</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#&apos;test-&apos; prefix is required.</span><br><span class="line">claudia test-lambda --profile claudia</span><br></pre></td></tr></table></figure>
+<h3 id="update-lambda-with-npm-run-command"><a href="#update-lambda-with-npm-run-command" class="headerlink" title="update lambda with npm run command"></a>update lambda with npm run command</h3><p>package.json</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">  "scripts": &#123;</span><br><span class="line">    "test": "claudia test-lambda --profile claudia",</span><br><span class="line">    "deploy": "claudia update --profile claudia"</span><br><span class="line">  &#125;,</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>update command : <code>npm run deploy</code></p>
+<h3 id="example-code"><a href="#example-code" class="headerlink" title="example code"></a>example code</h3><p><a href="https://github.com/j2yes/lambda-mongodb" target="_blank" rel="noopener">github</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://j2yes.github.io/2019/01/18/flutter/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -419,12 +806,24 @@
                 
               
 
-              <time title="Created: 2019-01-18 14:49:46 / Modified: 14:52:03" itemprop="dateCreated datePublished" datetime="2019-01-18T14:49:46+08:00">2019-01-18</time>
+              <time title="Created: 2019-01-18 14:49:46" itemprop="dateCreated datePublished" datetime="2019-01-18T14:49:46+09:00">2019-01-18</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-01-19 22:16:19" itemprop="dateModified" datetime="2019-01-19T22:16:19+09:00">2019-01-19</time>
               
             
           </span>
@@ -630,7 +1029,7 @@
                 
               
 
-              <time title="Created: 2019-01-12 22:27:47" itemprop="dateCreated datePublished" datetime="2019-01-12T22:27:47+08:00">2019-01-12</time>
+              <time title="Created: 2019-01-12 22:27:47" itemprop="dateCreated datePublished" datetime="2019-01-12T22:27:47+09:00">2019-01-12</time>
             
 
             
@@ -647,7 +1046,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-18 14:16:28" itemprop="dateModified" datetime="2019-01-18T14:16:28+08:00">2019-01-18</time>
+                <time title="Modified: 2019-01-19 22:16:19" itemprop="dateModified" datetime="2019-01-19T22:16:19+09:00">2019-01-19</time>
               
             
           </span>
@@ -847,7 +1246,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://j2yes.github.io/2018/12/28/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://j2yes.github.io/2019/01/01/hello-world/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="j2yes">
@@ -867,7 +1266,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/12/28/hello-world/" class="post-title-link" itemprop="https://j2yes.github.io/index.html">Hello World</a>
+                <a href="/2019/01/01/hello-world/" class="post-title-link" itemprop="https://j2yes.github.io/index.html">Hello World</a>
               
             
           </h1>
@@ -892,7 +1291,7 @@
                 
               
 
-              <time title="Created: 2018-12-28 09:48:13" itemprop="dateCreated datePublished" datetime="2018-12-28T09:48:13+08:00">2018-12-28</time>
+              <time title="Created: 2019-01-01 22:32:29" itemprop="dateCreated datePublished" datetime="2019-01-01T22:32:29+09:00">2019-01-01</time>
             
 
             
@@ -1028,7 +1427,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1045,7 +1444,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -1064,7 +1465,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
