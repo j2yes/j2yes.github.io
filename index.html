@@ -374,6 +374,236 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://j2yes.github.io/2019/02/24/nodejs/npm-registry/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="j2yes">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="normal development">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/02/24/nodejs/npm-registry/" class="post-title-link" itemprop="https://j2yes.github.io/index.html">npm-registry</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-02-24 21:04:36 / Modified: 22:09:46" itemprop="dateCreated datePublished" datetime="2019-02-24T21:04:36+09:00">2019-02-24</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/nodejs/" itemprop="url" rel="index"><span itemprop="name">nodejs</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- 728x90 -->
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-2730756420121198" data-ad-slot="5502918267"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="private-node-package-manger"><a href="#private-node-package-manger" class="headerlink" title="private node package manger"></a>private node package manger</h2><p><a href="http://www.npmjs.com" target="_blank" rel="noopener">www.npmjs.com</a> 에서도 개인이 한 달에 7$를 지불하면 private 패키지를 관리할 수 있다.<br>여건만 된다면 사설 저장소를 설치해서 관리하는 것도 나쁘지 않다.<br>미러링이나 캐쉬로 사용가능하기 때문에 private 으로 관리할 수 있다는 점 외에 장점이 많다.<br>사설 패키지 매니저로 <code>sinopia</code>와 <code>nexus</code>를 설치해보고 노드 프로젝트에 설정해보자.</p>
+<h2 id="sinopia"><a href="#sinopia" class="headerlink" title="sinopia"></a>sinopia</h2><p><a href="https://www.npmjs.com/package/sinopia" target="_blank" rel="noopener">https://www.npmjs.com/package/sinopia</a></p>
+<p>npm 엔드포인트 수정<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ npm config get registry</span><br><span class="line">https://registry.npmjs.org/</span><br><span class="line">$ npm set registry http://localhost:4873</span><br><span class="line">$ npm config get registry</span><br><span class="line">http://localhost:4873/</span><br></pre></td></tr></table></figure></p>
+<h2 id="nexus"><a href="#nexus" class="headerlink" title="nexus"></a>nexus</h2><p><a href="https://www.sonatype.com/" target="_blank" rel="noopener">https://www.sonatype.com/</a></p>
+<h3 id="설치-amp-실행"><a href="#설치-amp-실행" class="headerlink" title="설치 &amp; 실행"></a>설치 &amp; 실행</h3><ol>
+<li>nexus를 설치하는 방법은 2가지가 있다.<ul>
+<li>docker 사용</li>
+<li>그냥 설치</li>
+</ul>
+</li>
+<li>그냥 설치해 보자 … 우선 다운로드 받는다. <a href="https://www.sonatype.com/download-oss-sonatype" target="_blank" rel="noopener">https://www.sonatype.com/download-oss-sonatype</a></li>
+<li>java 8이 설치되어 있어야 한다.</li>
+<li>아카이브 해제하면 폴더 2개가 나온다</li>
+<li>sonatype-work 는 저장소다,</li>
+<li>다른 폴더의 안의 bin 폴더에서 nexus 파일을 실행</li>
+<li><a href="http://localhost:8081/" target="_blank" rel="noopener">http://localhost:8081/</a> 로 접속</li>
+<li>default admin account [admin / admin123]</li>
+</ol>
+<h3 id="repository-생성"><a href="#repository-생성" class="headerlink" title="repository 생성"></a>repository 생성</h3><p><img src="create_repo.png" alt="" title="create_repository"></p>
+<ul>
+<li>저장소 목록에서 url 컬럼의 버튼을 누르면 저장소 주소가 copy됨</li>
+<li>repository 타입<ul>
+<li>group : repository를 하나로 묶을 수 있는 repo</li>
+<li>hosted : 저장소 직접 호스팅</li>
+<li>proxy : 외부 저장소 prox</li>
+</ul>
+</li>
+<li>npm 저장소 만들기<ul>
+<li>proxy에 공식 저장소 주소 넣기 : <code>https://registry.npmjs.org/</code></li>
+<li>hosted 만들기</li>
+<li>group 으로 hosted proxy 묶기</li>
+</ul>
+</li>
+</ul>
+<h3 id="nexus-npm저장소-계정만들기"><a href="#nexus-npm저장소-계정만들기" class="headerlink" title="nexus npm저장소 계정만들기"></a>nexus npm저장소 계정만들기</h3><p><img src="create_acc.png" alt="" title="create_account"></p>
+<h3 id="저장소-realms-설정"><a href="#저장소-realms-설정" class="headerlink" title="저장소 realms 설정"></a>저장소 realms 설정</h3><p><img src="set_realms.png" alt="" title="set_realms"></p>
+<h3 id="user-role-설정"><a href="#user-role-설정" class="headerlink" title="user role 설정"></a>user role 설정</h3><p>처음 anonymous 권한 설정이 읽기에 열려 있기 때문에 필요에 따라 anonymous user의 role 변경이 필요함</p>
+<p><img src="set_role.png" alt="" title="set_role"></p>
+<h3 id="nexus-npm-저장소-사용하기"><a href="#nexus-npm-저장소-사용하기" class="headerlink" title="nexus npm 저장소 사용하기"></a>nexus npm 저장소 사용하기</h3><ul>
+<li><p>module publish 관련 설정</p>
+<ul>
+<li><p>.npmrc파일 생성</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#_auth=&lt;username&gt;:&lt;password&gt;</span><br><span class="line">#base64 인코딩</span><br><span class="line">_auth=YWRtaW46YWRtaW4xMjM=</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>package.json 수정</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  ...</span><br><span class="line"></span><br><span class="line">  &quot;publishConfig&quot;: &#123;</span><br><span class="line">    &quot;registry&quot;: &quot;http://your.nexus.repository.com/repository/npm-private/&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>install repository 지정</p>
+<ul>
+<li>npm config command 이용</li>
+<li>.npmrc 파일에 설정정보 추가<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">registry=http://your.nexus.repository.com/repository/npm-group/</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h2><ul>
+<li><a href="http://www.sonatype.org/nexus/2017/02/14/using-nexus-3-as-your-repository-part-2-npm-packages/" target="_blank" rel="noopener">http://www.sonatype.org/nexus/2017/02/14/using-nexus-3-as-your-repository-part-2-npm-packages/</a></li>
+<li><a href="https://help.sonatype.com/display/NXRM3" target="_blank" rel="noopener">https://help.sonatype.com/display/NXRM3</a></li>
+<li><a href="https://gs.saro.me/#!m=elec&amp;jn=774" target="_blank" rel="noopener">https://gs.saro.me/#!m=elec&amp;jn=774</a> </li>
+<li><a href="https://kingbbode.github.io/posts/nexus-3xx-maven-npm" target="_blank" rel="noopener">https://kingbbode.github.io/posts/nexus-3xx-maven-npm</a></li>
+<li><a href="https://blog.sonatype.com/using-nexus-3-as-your-repository-part-2-npm-packages" target="_blank" rel="noopener">https://blog.sonatype.com/using-nexus-3-as-your-repository-part-2-npm-packages</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://j2yes.github.io/2019/02/17/nodejs/nodejs-passport/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -575,206 +805,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://j2yes.github.io/2019/02/04/ionic/ionic-set-environment/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="j2yes">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="normal development">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/02/04/ionic/ionic-set-environment/" class="post-title-link" itemprop="https://j2yes.github.io/index.html">ionic-set-environment</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-02-04 16:19:45 / Modified: 16:21:41" itemprop="dateCreated datePublished" datetime="2019-02-04T16:19:45+09:00">2019-02-04</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/ionic/" itemprop="url" rel="index"><span itemprop="name">ionic</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- 728x90 -->
-    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-2730756420121198" data-ad-slot="5502918267"></ins>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="공식-document"><a href="#공식-document" class="headerlink" title="공식 document"></a>공식 document</h2><p><a href="http://ionicframework.com/docs/intro/installation/" target="_blank" rel="noopener">http://ionicframework.com/docs/intro/installation/</a></p>
-<h2 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># permission deny되는 경우 sudo로 설치해주세요</span><br><span class="line">npm install -g ionic cordova</span><br></pre></td></tr></table></figure>
-<p><strong><em>node는 필수로 설치되어 있어야 합니다.</em></strong> </p>
-<h2 id="프로젝트-생성-실행"><a href="#프로젝트-생성-실행" class="headerlink" title="프로젝트 생성 / 실행"></a>프로젝트 생성 / 실행</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#프로젝트만들기</span><br><span class="line">#https://ionicframework.com/getting-started/</span><br><span class="line">ionic start myFirstApp template_name</span><br><span class="line"></span><br><span class="line">##template type</span><br><span class="line">#tabs(default) : a simple 3 tab layout</span><br><span class="line">#sidemenu: a layout with a swipable menu on the side</span><br><span class="line">#blank: a bare starter with a single page</span><br><span class="line">#super: starter project with over 14 ready to use page designs</span><br><span class="line">#tutorial: a guided starter project</span><br><span class="line"></span><br><span class="line">#생성한 프로젝트로 이동</span><br><span class="line">cd myFirstApp</span><br><span class="line"></span><br><span class="line">#실행하기(run on browser)</span><br><span class="line">ionic serve</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>에러[Error: Cannot find module ‘reflect-metadata’]발생하는 경우 node 버전 6.xx로 올려주세요.<br><a href="https://github.com/driftyco/ionic/issues/9689" target="_blank" rel="noopener">https://github.com/driftyco/ionic/issues/9689</a> </p>
-</blockquote>
-<h2 id="플랫폼별-개발환경-만들기"><a href="#플랫폼별-개발환경-만들기" class="headerlink" title="플랫폼별 개발환경 만들기"></a>플랫폼별 개발환경 만들기</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#프로젝트에 설치된 플랫폼 리스트 확인하기</span><br><span class="line">cordova platform ls</span><br><span class="line"></span><br><span class="line">#플랫폼별 요구사항 체크</span><br><span class="line">cordova requirements</span><br><span class="line"></span><br><span class="line">#프로젝트에 플랫폼 추가하기</span><br><span class="line">cordova platform add ios --save</span><br><span class="line">cordova platform add android --save</span><br></pre></td></tr></table></figure>
-<h3 id="ios-개발환경-만들기"><a href="#ios-개발환경-만들기" class="headerlink" title="ios 개발환경 만들기"></a>ios 개발환경 만들기</h3><ul>
-<li>app store에서 xcode 검색해서 설치하기</li>
-<li>iOS기기로 런치할 수 있는 개발 툴 설치<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g ios-sim</span><br><span class="line">npm install -g ios-deploy</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p>에러[xcode-select: error: tool ‘xcodebuild’ requires Xcode, but active developer directory ‘/Library/Developer/CommandLineTools’ is a command line tools instance]나는 경우<br><a href="http://frontend.diffthink.kr/2016/04/ios.html" target="_blank" rel="noopener">http://frontend.diffthink.kr/2016/04/ios.html</a></p>
-</blockquote>
-<p><img src="/images/ionic/ios_setting.png" alt="ios_setting" title="ios 설정"></p>
-<ul>
-<li>xcode에서 preference -&gt; Locations command line tools 선택<ul>
-<li>참고 : <a href="https://cordova.apache.org/docs/en/latest/guide/platforms/ios/" target="_blank" rel="noopener">https://cordova.apache.org/docs/en/latest/guide/platforms/ios/</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="android-개발환경-만들기"><a href="#android-개발환경-만들기" class="headerlink" title="android 개발환경 만들기"></a>android 개발환경 만들기</h3><p>android studio 설치하기 : <a href="https://developer.android.com/studio/install.html" target="_blank" rel="noopener">https://developer.android.com/studio/install.html</a></p>
-<p>ANDROID_HOME path 설정</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#mac에서 설정 </span><br><span class="line">#~.bash_profile 파일에 설정하기</span><br><span class="line">export ANDROID_HOME=&quot;/Users/username/Library/Android/sdk&quot;</span><br><span class="line">export ANDROID_TOOLS=&quot;/Users/username/Library/Android/sdk/tools&quot;</span><br><span class="line">export ANDROID_PLATFORM_TOOLS=&quot;/Users/username/Library/Android/sdk/platform-tools&quot;</span><br><span class="line">PATH=$PATH:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS</span><br></pre></td></tr></table></figure>
-<p>android 가상 디바이스에서 실행하기</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 가상 디바이스 목록보기</span><br><span class="line">adb devices</span><br><span class="line"></span><br><span class="line"># 결과목록</span><br><span class="line"># emulator-5554   device</span><br><span class="line"></span><br><span class="line"># 특정 타겟에서 실행하기</span><br><span class="line">ionic run android --target=emulator-5554</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>에러[Error: Could not find gradle wrapper within Android SDK. Might need to update your Android SDK.<br>Looked here: /Users/jiseob/Library/Android/sdk/tools/templates/gradle/wrapper]나는경우<br><a href="https://forum.ionicframework.com/t/error-could-not-find-gradle-wrapper-within-android-sdk-might-need-to-update-yo-ur-android-sdk/22056/15" target="_blank" rel="noopener">https://forum.ionicframework.com/t/error-could-not-find-gradle-wrapper-within-android-sdk-might-need-to-update-yo-ur-android-sdk/22056/15</a><br>링크 참고해서 다운로드 받은 파일은 tools에 덮기</p>
-</blockquote>
-<blockquote>
-<p>에러[Error: android: Command failed with exit code 2]<br>에뮬레이터 실행해 놓고, 빌드하기<br>참고하기 : <a href="https://cordova.apache.org/docs/en/latest/guide/platforms/android/" target="_blank" rel="noopener">https://cordova.apache.org/docs/en/latest/guide/platforms/android/</a></p>
-</blockquote>
-<h2 id="자주-사용하는-ionic-command"><a href="#자주-사용하는-ionic-command" class="headerlink" title="자주 사용하는 ionic command"></a>자주 사용하는 ionic command</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#특정 플랫폼으로 실행하기</span><br><span class="line">#실제 디바이스에 설치하기 (debugging &amp; developer mode 켜고 usb로 연결한 후 사용)</span><br><span class="line">#https://developer.android.com/studio/run/device.html#developer-device-options</span><br><span class="line">ionic cordova run android --device</span><br><span class="line">ionic cordova build android --release</span><br><span class="line">ionic cordova platform ls</span><br><span class="line"></span><br><span class="line"># browser에서 실행하기</span><br><span class="line">ionic serve </span><br><span class="line">ionic run browser</span><br><span class="line"></span><br><span class="line">##위의 두 커맨드는 브라우저에서 실행되지만 네이티브 기능을 사용하려면 밑의 커맨드를 이용해야 함</span><br><span class="line">#(plaform에 browser 추가 필요)</span><br><span class="line">#https://github.com/driftyco/ionic-native/issues/403</span><br><span class="line"></span><br><span class="line">#ionic serve runs your app as a website (meaning it doesn&apos;t have any Cordova capabilities)</span><br><span class="line">#ionic run browser runs your app in the Cordova browser platform, which will inject cordova.jsand any plugins that have browser capabilities</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -822,7 +852,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -886,7 +916,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">14</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

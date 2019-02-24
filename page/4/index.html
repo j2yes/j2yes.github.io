@@ -374,6 +374,232 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://j2yes.github.io/2019/02/04/ionic/ionic-get-started/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="j2yes">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="normal development">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/02/04/ionic/ionic-get-started/" class="post-title-link" itemprop="https://j2yes.github.io/page/4/index.html">ionic-get-started</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-02-04 15:49:46 / Modified: 16:13:17" itemprop="dateCreated datePublished" datetime="2019-02-04T15:49:46+09:00">2019-02-04</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/ionic/" itemprop="url" rel="index"><span itemprop="name">ionic</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- 728x90 -->
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-2730756420121198" data-ad-slot="5502918267"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="프로젝트-구조"><a href="#프로젝트-구조" class="headerlink" title="프로젝트 구조"></a>프로젝트 구조</h3><p><img src="/images/ionic/folder_structure.png" alt="폴더 구조" title="folder_structure"></p>
+<ul>
+<li>src/app : app.module.ts가 entry point ( index.html에서 ion-app에 표시될 root component가 entry point 인 app.module파일에 지정되어 있다. )</li>
+<li>src/pages : 화면 페이지 단위로 구분</li>
+<li>src/asset : 이미지 등 </li>
+</ul>
+<h3 id="ionic-view-life-cycle"><a href="#ionic-view-life-cycle" class="headerlink" title="ionic view life cycle"></a>ionic view life cycle</h3><p><a href="http://blog.ionic.io/navigating-lifecycle-events/" target="_blank" rel="noopener">http://blog.ionic.io/navigating-lifecycle-events/</a></p>
+<h3 id="페이지-파일-구성"><a href="#페이지-파일-구성" class="headerlink" title="페이지 파일 구성"></a>페이지 파일 구성</h3><p>한페이지에 ts, html, scss 파일 구조를 유지하는게 좋음</p>
+<p>예) hello-ionic/</p>
+<ul>
+<li>hello-ionic.html</li>
+<li>hello-ionic.scss</li>
+<li>hello-ionic.ts<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  <span class="comment">//selector 는 필수는 아니지만 특정 페이지에서 기본 스타일 적용에 유용함</span></span><br><span class="line">  selector: <span class="string">'page-hello-ionic'</span>,</span><br><span class="line">  templateUrl: <span class="string">'hello-ionic.html'</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloIonicPage</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="ionic-navigation"><a href="#ionic-navigation" class="headerlink" title="ionic navigation"></a>ionic navigation</h3><p>ionic은 navigationController를 이용해서 flexible하게 페이지를 이동할 수 있다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#ion-nav 태그에 root로 지정된 페이지가 가장 상위 페이지</span><br><span class="line">&lt;ion-nav [root]=&quot;rootPage&quot;&gt;&lt;/ion-nav&gt;</span><br></pre></td></tr></table></figure>
+<p>페이지 이동 (push, pop)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OtherPage</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(public navCtrl: NavController) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//다른 페이지로 이동하기</span></span><br><span class="line">  goToOtherPage() &#123;</span><br><span class="line">    <span class="comment">//push another page onto the history stack</span></span><br><span class="line">    <span class="comment">//causing the nav controller to animate the new page in</span></span><br><span class="line">    <span class="keyword">this</span>.navCtrl.push(OtherPage);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//뒤로가기 (ion-navbar 태그를 페이지에 포함하고 있는 경우, 백버튼에 대한 이벤트 처리가 자동으로 처리됨)</span></span><br><span class="line">  goBack() &#123;</span><br><span class="line">    <span class="keyword">this</span>.navCtrl.pop();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="탭-페이지이동-처리"><a href="#탭-페이지이동-처리" class="headerlink" title="탭 페이지이동 처리"></a>탭 페이지이동 처리</h4><p>탭으로 구성된 화면은 각각의 탭이 최상위 화면이 되어 각 탭마다 고유한 아이디를 갖고 있는 navigationController를 이용함</p>
+<h3 id="component-정리하기-http-ionicframework-com-docs-api"><a href="#component-정리하기-http-ionicframework-com-docs-api" class="headerlink" title="component 정리하기 (http://ionicframework.com/docs//api/)"></a>component 정리하기 (<a href="http://ionicframework.com/docs//api/" target="_blank" rel="noopener">http://ionicframework.com/docs//api/</a>)</h3><h4 id="http-통신하기"><a href="#http-통신하기" class="headerlink" title="http 통신하기"></a>http 통신하기</h4><p>http 를 이용하는 방법은 두가지</p>
+<ul>
+<li>@angular/http 사용</li>
+<li>@ionic-native/http 사용 </li>
+<li>차이점 : <a href="https://forum.ionicframework.com/t/what-is-the-difference-between-angular-and-native-http/73095" target="_blank" rel="noopener">https://forum.ionicframework.com/t/what-is-the-difference-between-angular-and-native-http/73095</a></li>
+</ul>
+<p>@ionic-native/http 사용 예시</p>
+<ul>
+<li><p>설치</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#설치</span><br><span class="line">ionic plugin add --save cordova-plugin-http</span><br><span class="line">npm install --save @ionic-native/http</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>설정</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// provider에 추가하기</span></span><br><span class="line"><span class="comment">// app.module.ts 파일에 provider로 추가하고 사용해야 함</span></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">providers: [</span><br><span class="line">    StatusBar,</span><br><span class="line">    SplashScreen,</span><br><span class="line">    HTTP,</span><br><span class="line">    &#123;<span class="attr">provide</span>: ErrorHandler, <span class="attr">useClass</span>: IonicErrorHandler&#125;</span><br><span class="line">  ]</span><br><span class="line"></span><br><span class="line"><span class="comment">// ...</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>@angular/http 사용 예시</p>
+<ul>
+<li>설정<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// app.module.ts 파일에 모듈 추가하고 사용해야 함</span></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="keyword">import</span> &#123; HttpModule &#125; <span class="keyword">from</span> <span class="string">'@angular/http'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line">imports: [</span><br><span class="line">  BrowserModule,</span><br><span class="line">  HttpModule,</span><br><span class="line">  IonicModule.forRoot(MyApp)</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="참조문서"><a href="#참조문서" class="headerlink" title="참조문서"></a>참조문서</h4><ul>
+<li><a href="https://ionicframework.com/docs/native/http/" target="_blank" rel="noopener">https://ionicframework.com/docs/native/http/</a></li>
+<li><a href="http://blog.ionic.io/10-minutes-with-ionic-2-calling-an-api/" target="_blank" rel="noopener">http://blog.ionic.io/10-minutes-with-ionic-2-calling-an-api/</a></li>
+</ul>
+<h4 id="whitelist-설정-http-www-gajotres-net-ionic-2-making-rest-http-requests-like-a-pro"><a href="#whitelist-설정-http-www-gajotres-net-ionic-2-making-rest-http-requests-like-a-pro" class="headerlink" title="whitelist 설정 (http://www.gajotres.net/ionic-2-making-rest-http-requests-like-a-pro/)"></a>whitelist 설정 (<a href="http://www.gajotres.net/ionic-2-making-rest-http-requests-like-a-pro/" target="_blank" rel="noopener">http://www.gajotres.net/ionic-2-making-rest-http-requests-like-a-pro/</a>)</h4><ul>
+<li><p>설치</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cordova plugin add cordova-plugin-whitelist</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>proxy 설정하기</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#프로젝트의 ionic.config.json 파일에 설정</span><br><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;auction&quot;,  &quot;app_id&quot;: &quot;&quot;,  &quot;type&quot;: &quot;ionic-angular&quot;,  &quot;proxies&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;path&quot;: &quot;/apt&quot;,      &quot;proxyUrl&quot;: &quot;http://openapi.molit.go.kr/OpenAPI_ToolInstallPackage/service/rest/RTMSOBJSvc/getRTMSDataSvcAptTradeDev&quot;    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="typescript-기본"><a href="#typescript-기본" class="headerlink" title="typescript 기본"></a>typescript 기본</h3><p><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" rel="noopener">https://www.typescriptlang.org/docs/handbook/basic-types.html</a></p>
+<h3 id="angular2-기본-문법"><a href="#angular2-기본-문법" class="headerlink" title="angular2 기본 문법"></a>angular2 기본 문법</h3><p>반복문</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;li *ngFor=&quot;let hero of heroes” (click)=&quot;onSelect(hero)&gt;</span><br><span class="line">    &lt;span class=&quot;badge&quot;&gt;&#123;&#123;hero.id&#125;&#125;&lt;/span&gt; &#123;&#123;hero.name&#125;&#125;</span><br><span class="line">&lt;/li&gt;</span><br></pre></td></tr></table></figure>
+<p>조건문</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div *ngIf=&quot;selectedHero&quot;&gt;</span><br><span class="line">  &lt;h2&gt;&#123;&#123;selectedHero.name&#125;&#125; details!&lt;/h2&gt;</span><br><span class="line">  &lt;div&gt;&lt;label&gt;id: &lt;/label&gt;&#123;&#123;selectedHero.id&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;label&gt;name: &lt;/label&gt;</span><br><span class="line">    &lt;input [(ngModel)]=&quot;selectedHero.name&quot; placeholder=&quot;name&quot;/&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>동적 스타일</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;li *ngFor=&quot;let hero of heroes&quot;</span><br><span class="line">  [class.selected]=&quot;hero === selectedHero&quot;</span><br><span class="line">  (click)=&quot;onSelect(hero)&quot;&gt;</span><br><span class="line">  &lt;span class=&quot;badge&quot;&gt;&#123;&#123;hero.id&#125;&#125;&lt;/span&gt; &#123;&#123;hero.name&#125;&#125;</span><br><span class="line">&lt;/li&gt;</span><br></pre></td></tr></table></figure>
+<p>@Injectable() 사용하기 : <a href="https://angular.io/docs/ts/latest/guide/dependency-injection.html" target="_blank" rel="noopener">https://angular.io/docs/ts/latest/guide/dependency-injection.html</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://j2yes.github.io/2019/01/19/cloudiajs/claudiajs-rest-api/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -551,201 +777,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://j2yes.github.io/2019/01/19/cloudiajs/claudiajs-get-started/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="j2yes">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="normal development">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/01/19/cloudiajs/claudiajs-get-started/" class="post-title-link" itemprop="https://j2yes.github.io/page/4/index.html">claudiajs-get-started</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-01-19 22:20:19 / Modified: 22:29:05" itemprop="dateCreated datePublished" datetime="2019-01-19T22:20:19+09:00">2019-01-19</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/claudiajs/" itemprop="url" rel="index"><span itemprop="name">claudiajs</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- 728x90 -->
-    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-2730756420121198" data-ad-slot="5502918267"></ins>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="claudiajs-https-claudiajs-com"><a href="#claudiajs-https-claudiajs-com" class="headerlink" title="claudiajs : https://claudiajs.com"></a>claudiajs : <a href="https://claudiajs.com" target="_blank" rel="noopener">https://claudiajs.com</a></h3><ol>
-<li>install claudia</li>
-<li>execute command <code>npm init</code></li>
-<li>make lambda.js</li>
-<li>set aws credential on user root path</li>
-<li>create lambda function as command with profile</li>
-<li>invoke lambda with profile : <code>claudia test-lambda --profile claudia</code></li>
-<li>update lambda : <code>claudia update</code></li>
-<li>mongodb example project</li>
-</ol>
-<h3 id="install-claudia"><a href="#install-claudia" class="headerlink" title="install claudia"></a>install claudia</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># global installation</span><br><span class="line">npm install claudia -g</span><br><span class="line"></span><br><span class="line"># check installation</span><br><span class="line">claudia -version</span><br></pre></td></tr></table></figure>
-<h3 id="make-lambda-project"><a href="#make-lambda-project" class="headerlink" title="make lambda project"></a>make lambda project</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir example</span><br><span class="line">cd example</span><br><span class="line">npm init</span><br></pre></td></tr></table></figure>
-<h3 id="make-a-lambda-js-file-https-docs-aws-amazon-com-lambda-latest-dg-nodejs-prog-model-handler-html"><a href="#make-a-lambda-js-file-https-docs-aws-amazon-com-lambda-latest-dg-nodejs-prog-model-handler-html" class="headerlink" title="make a lambda.js file : https://docs.aws.amazon.com/lambda/latest/dg/nodejs-prog-model-handler.html"></a>make a lambda.js file : <a href="https://docs.aws.amazon.com/lambda/latest/dg/nodejs-prog-model-handler.html" target="_blank" rel="noopener">https://docs.aws.amazon.com/lambda/latest/dg/nodejs-prog-model-handler.html</a></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.normal example</span></span><br><span class="line">exports.myHandler = <span class="function"><span class="keyword">function</span>(<span class="params">event, context</span>) </span>&#123;</span><br><span class="line">   ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 2.you can use callback</span></span><br><span class="line">exports.handler = <span class="function"><span class="keyword">function</span>(<span class="params">event, context, callback</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//console.log('Received event:', JSON.stringify(event, null, 2));</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'value1 ='</span>, event.key1);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'value2 ='</span>, event.key2);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'value3 ='</span>, event.key3);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'remaining time ='</span>, context.getRemainingTimeInMillis());</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'functionName ='</span>, context.functionName);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'AWSrequestID ='</span>, context.awsRequestId);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'logGroupName ='</span>, context.log_group_name);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'logStreamName ='</span>, context.log_stream_name);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'clientContext ='</span>, context.clientContext);</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> context.identity !== <span class="string">'undefined'</span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Cognitoidentity ID ='</span>, context.identity.cognitoIdentityId);</span><br><span class="line">    &#125;    </span><br><span class="line">    callback(<span class="literal">null</span>, event.key1); <span class="comment">// Echo back the first key value</span></span><br><span class="line">    <span class="comment">// or</span></span><br><span class="line">    <span class="comment">// callback("some error type"); </span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 3.below is available on node 8.xx</span></span><br><span class="line">exports.myHandler = <span class="keyword">async</span> <span class="function"><span class="keyword">function</span>(<span class="params">event, context</span>) </span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">"value1 = "</span> + event.key1);</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">"value2 = "</span> + event.key2);  </span><br><span class="line">   <span class="keyword">return</span> <span class="string">"some success message"</span>;</span><br><span class="line">   <span class="comment">// or </span></span><br><span class="line">   <span class="comment">// throw new Error(“some error type”); </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="setting-AWS-IAM"><a href="#setting-AWS-IAM" class="headerlink" title="setting AWS IAM"></a>setting AWS IAM</h3><ul>
-<li><a href="https://claudiajs.com/tutorials/installing.html" target="_blank" rel="noopener">https://claudiajs.com/tutorials/installing.html</a> </li>
-<li><a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html" target="_blank" rel="noopener">https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html</a></li>
-</ul>
-<p>make file <code>.aws/credentials</code>  </p>
-<blockquote>
-<p>first line is profile name.</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[claudia]</span><br><span class="line">aws_access_key_id = YOUR_ACCESS_KEY</span><br><span class="line">aws_secret_access_key = YOUR_ACCESS_SECRET</span><br></pre></td></tr></table></figure>
-<h3 id="create-lambda-function"><a href="#create-lambda-function" class="headerlink" title="create lambda function"></a>create lambda function</h3><p>seoul region is <code>ap-northeast-2</code>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># create lambda</span><br><span class="line">claudia create --region ap-northeast-2 --handler lambda.myHandler --profile claudia</span><br></pre></td></tr></table></figure>
-<h3 id="invoke-lambda"><a href="#invoke-lambda" class="headerlink" title="invoke lambda"></a>invoke lambda</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#&apos;test-&apos; prefix is required.</span><br><span class="line">claudia test-lambda --profile claudia</span><br></pre></td></tr></table></figure>
-<h3 id="update-lambda-with-npm-run-command"><a href="#update-lambda-with-npm-run-command" class="headerlink" title="update lambda with npm run command"></a>update lambda with npm run command</h3><p>package.json</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">  "scripts": &#123;</span><br><span class="line">    "test": "claudia test-lambda --profile claudia",</span><br><span class="line">    "deploy": "claudia update --profile claudia"</span><br><span class="line">  &#125;,</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p>update command : <code>npm run deploy</code></p>
-<h3 id="example-code"><a href="#example-code" class="headerlink" title="example code"></a>example code</h3><p><a href="https://github.com/j2yes/lambda-mongodb" target="_blank" rel="noopener">github</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -793,7 +824,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -857,7 +888,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">14</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
