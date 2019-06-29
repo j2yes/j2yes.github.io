@@ -374,7 +374,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://j2yes.github.io/2019/01/19/cloudiajs/claudiajs-rest-api/">
+    <link itemprop="mainEntityOfPage" href="https://j2yes.github.io/2019/02/04/ionic/ionic-prototype-app-development/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="j2yes">
@@ -394,7 +394,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/01/19/cloudiajs/claudiajs-rest-api/" class="post-title-link" itemprop="https://j2yes.github.io/page/5/index.html">claudiajs-rest-api</a>
+                <a href="/2019/02/04/ionic/ionic-prototype-app-development/" class="post-title-link" itemprop="https://j2yes.github.io/page/5/index.html">ionic-prototype-app-development</a>
               
             
           </h1>
@@ -419,7 +419,7 @@
                 
               
 
-              <time title="Created: 2019-01-19 22:22:17 / Modified: 22:29:05" itemprop="dateCreated datePublished" datetime="2019-01-19T22:22:17+09:00">2019-01-19</time>
+              <time title="Created: 2019-02-04 16:14:38 / Modified: 16:21:28" itemprop="dateCreated datePublished" datetime="2019-02-04T16:14:38+09:00">2019-02-04</time>
             
 
             
@@ -441,7 +441,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/claudiajs/" itemprop="url" rel="index"><span itemprop="name">claudiajs</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/ionic/" itemprop="url" rel="index"><span itemprop="name">ionic</span></a></span>
 
                 
                 
@@ -484,32 +484,50 @@
       
         
           
-            <h3 id="claudiajs-https-claudiajs-com"><a href="#claudiajs-https-claudiajs-com" class="headerlink" title="claudiajs : https://claudiajs.com"></a>claudiajs : <a href="https://claudiajs.com" target="_blank" rel="noopener">https://claudiajs.com</a></h3><ol>
-<li>make project</li>
-<li>install claudia api module</li>
-<li>modify package.json script command</li>
-<li>make api.js file</li>
-<li>make api gateway</li>
-<li>example code</li>
-</ol>
-<h3 id="make-lambda-project"><a href="#make-lambda-project" class="headerlink" title="make lambda project"></a>make lambda project</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir example</span><br><span class="line">cd example</span><br><span class="line">npm init</span><br></pre></td></tr></table></figure>
-<h3 id="install-claudia-api-module-https-claudiajs-com-claudia-api-builder-html"><a href="#install-claudia-api-module-https-claudiajs-com-claudia-api-builder-html" class="headerlink" title="install claudia api module : https://claudiajs.com/claudia-api-builder.html"></a>install claudia api module : <a href="https://claudiajs.com/claudia-api-builder.html" target="_blank" rel="noopener">https://claudiajs.com/claudia-api-builder.html</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install claudia-api-builder -S</span><br></pre></td></tr></table></figure>
-<h3 id="modify-package-json-script-command"><a href="#modify-package-json-script-command" class="headerlink" title="modify package.json script command"></a>modify package.json script command</h3><p>package.json<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">  "scripts": &#123;</span><br><span class="line">    "start": "claudia create --name rest-api-test --region ap-northeast-2 --api-module api --profile claudia",</span><br><span class="line">    "deploy": "claudia update --profile claudia"</span><br><span class="line">  &#125;,</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
-<h3 id="make-a-api-js-file"><a href="#make-a-api-js-file" class="headerlink" title="make a api.js file :"></a>make a api.js file :</h3><ul>
-<li><a href="https://github.com/claudiajs/claudia-api-builder/blob/master/docs/api.md#api-definition-syntax" target="_blank" rel="noopener">https://github.com/claudiajs/claudia-api-builder/blob/master/docs/api.md#api-definition-syntax</a></li>
-<li><a href="https://github.com/claudiajs/claudia-api-builder/blob/4f5c30df0365812765806ae2f9fd97e7a1287ed9/docs/api.md" target="_blank" rel="noopener">https://github.com/claudiajs/claudia-api-builder/blob/4f5c30df0365812765806ae2f9fd97e7a1287ed9/docs/api.md</a></li>
+            <blockquote>
+<p>p2p 금융상품 모아서 보여주기</p>
+</blockquote>
+<p>이번에 p2p 금융상품을 모아서 보여주는 앱을 만들어 보기로 했습니다.<br>p2p에 투자하려다 보면 사이트마다 들어가서 투자상품을 확인하는게 너무 번거로워서 시작했는데, 이미 있더군요…</p>
+<h3 id="시작하기"><a href="#시작하기" class="headerlink" title="시작하기"></a>시작하기</h3><p>ionic이 문제인건지 angular가 문제인지 업데이트만 되면 앱을 수정해야 합니다.</p>
+<p>업데이트하고 버전에 맞게 수정하는데 너무 많은 시간을 써서 최신 stable로 시작하고 버전을 fix하고 사용했습니다.</p>
+<p>node와 ionic 설치를 끝내고, 프로젝트를 생성합니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ionic start MyIonicProject super</span><br></pre></td></tr></table></figure>
+<p>super로 만들면 왠만한 기능의 템플릿이 포함되어 있어서 <code>복붙</code>이 너무 편해요.</p>
+<p>나중에 필요없는 파일 지우는것도 일이긴 하지만 빨리, 쉽게 만들기 위해서 super로 생성했습니다.</p>
+<p>폴더 구조도 잘 잡혀있어서 처음 ionic 프로젝트를 접해보는 분께 추천드립니다. </p>
+<p>프로젝트 생성이 완료되었으면 간단히 실행해봅시다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ionic serve</span><br></pre></td></tr></table></figure>
+<p>브라우저에서 정상적으로 실행된다면 기본적인 설정은 끝입니다.</p>
+<h4 id="기능-정의하기"><a href="#기능-정의하기" class="headerlink" title="기능 정의하기"></a>기능 정의하기</h4><p>어떤 화면이 필요할까…</p>
+<p>이번 앱의 목적은 여러 p2p 사이트의 딜 목록을 모아서 보여주는 것입니다.</p>
+<p>대표적인 p2p 사이트를 들락날락.. 공통적으로 보이는 factor가 수익률(이자율)과 금액 소진율정도입니다.</p>
+<p>이미지가 있으면 좋겠지만 이미지는 없는 경우도 많아서 공통으로 넣기 애매해 보입니다.</p>
+<p>사실 상환방법에 따라 실수익률이 많이 달라지기 때문에 상환방식도 목록에서 보여주고 싶지만, 해당 정보가 p2p사이트에서 상세로 빠져있는 경우가 많아 빼기로 했습니다.</p>
+<p>그래서 목록에서 보여지는 정보를 다섯가지 항목으로 구성하기로 했습니다.</p>
+<p><strong><em>목록에서 보여지는 정보</em></strong></p>
+<ul>
+<li>사이트로고</li>
+<li>금액</li>
+<li>수익률</li>
+<li>기간</li>
+<li>소진율(optional)</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ApiBuilder = <span class="built_in">require</span>(<span class="string">'claudia-api-builder'</span>),</span><br><span class="line">	api = <span class="keyword">new</span> ApiBuilder(),</span><br><span class="line">	superb = <span class="built_in">require</span>(<span class="string">'superb'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = api;</span><br><span class="line"></span><br><span class="line">api.get(<span class="string">'/greet'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">request</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> request.queryString.name + <span class="string">' is '</span> + superb();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="make-api-gateway-https-claudiajs-com-tutorials-hello-world-api-gateway-html"><a href="#make-api-gateway-https-claudiajs-com-tutorials-hello-world-api-gateway-html" class="headerlink" title="make api gateway : https://claudiajs.com/tutorials/hello-world-api-gateway.html"></a>make api gateway : <a href="https://claudiajs.com/tutorials/hello-world-api-gateway.html" target="_blank" rel="noopener">https://claudiajs.com/tutorials/hello-world-api-gateway.html</a></h3><p>execute command</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#claudia create --name [lambda function name, api gateway name] --region [region name] --api-module [main javascript file name] --profile [profile name]</span><br><span class="line">npm run start</span><br></pre></td></tr></table></figure>
-<p>you can see below console as result</p>
-<p>saving configuration<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"lambda"</span>: &#123;</span><br><span class="line">    <span class="attr">"role"</span>: <span class="string">"rest-api-test-executor"</span>,</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"rest-api-test"</span>,</span><br><span class="line">    <span class="attr">"region"</span>: <span class="string">"ap-northeast-2"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"api"</span>: &#123;</span><br><span class="line">    <span class="attr">"id"</span>: <span class="string">"XXXXXXXX"</span>,</span><br><span class="line">    <span class="attr">"module"</span>: <span class="string">"api"</span>,</span><br><span class="line">    <span class="attr">"url"</span>: <span class="string">"https://XXXXXXXX.execute-api.ap-northeast-2.amazonaws.com/latest"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>you can connect to <code>api.url</code></p>
-<h3 id="example-code"><a href="#example-code" class="headerlink" title="example code"></a>example code</h3><p><a href="https://github.com/j2yes/lambda-rest-claudia" target="_blank" rel="noopener">github</a></p>
-<h3 id="인증관련-Reference"><a href="#인증관련-Reference" class="headerlink" title="인증관련 Reference"></a>인증관련 Reference</h3><ul>
-<li>카카오 : <a href="https://github.com/bskim/gamingonaws2017_serverless" target="_blank" rel="noopener">https://github.com/bskim/gamingonaws2017_serverless</a></li>
-<li>setting authorization to call api by aws iam : <a href="https://docs.aws.amazon.com/ko_kr/apigateway/latest/developerguide/api-gateway-control-access-using-iam-policies-to-invoke-api.html" target="_blank" rel="noopener">https://docs.aws.amazon.com/ko_kr/apigateway/latest/developerguide/api-gateway-control-access-using-iam-policies-to-invoke-api.html</a></li>
+<p>목록 화면은 사이트 검색이 가능하게하고, 화면 상단에 대쉬보드 기능을 겸할 수 있는 요약 정보를 보여주기로 합니다.</p>
+<p>한페이지로 끝내버리기 위한.. 화면 구성입니다.</p>
+<p>이제 생각한대로 만들기 시작해봅시다.</p>
+<h4 id="플러그인-설치"><a href="#플러그인-설치" class="headerlink" title="플러그인 설치"></a>플러그인 설치</h4><p>대쉬보드는 검색 사이트의 누적 데이터를 보여주도록 합시다.<br><a href="https://www.joshmorony.com/adding-responsive-charts-graphs-to-ionic-2-applications/" target="_blank" rel="noopener">https://www.joshmorony.com/adding-responsive-charts-graphs-to-ionic-2-applications/</a></p>
+<ul>
+<li>누적 투자금 (파이차트)</li>
+<li>누적 수익률</li>
+<li>기준금리(<a href="http://www.bok.or.kr/baserate/baserateList.action?menuNaviId=1927" target="_blank" rel="noopener">http://www.bok.or.kr/baserate/baserateList.action?menuNaviId=1927</a>)</li>
 </ul>
+<p>중간에 소진율을 보여주기 위한 progress bar 도 추가하고..<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#https://www.joshmorony.com/build-a-simple-progress-bar-component-in-ionic-2/</span><br><span class="line">ionic g component ProgressBar</span><br></pre></td></tr></table></figure></p>
+<p>상세화면을 띄우기 위해서 in-app-browser도 설치<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#https://ionicframework.com/docs/native/in-app-browser/</span><br><span class="line">ionic cordova plugin add cordova-plugin-inappbrowser</span><br><span class="line">npm install --save @ionic-native/in-app-browser</span><br></pre></td></tr></table></figure></p>
+<p>대충 화면 작업은 끝났습니다. 처음 예상한 화면이랑 조금 다르긴 한데, 유사한 결과물을 만들었습니다.<br>(통계화면과 목록화면을 나누고 사이트별 검색은 셀렉트박스를 이용했습니다.)</p>
+<h5 id="딜-목록화면"><a href="#딜-목록화면" class="headerlink" title="딜 목록화면"></a>딜 목록화면</h5><p><img src="/images/ionic/deal_list.webp" alt="딜 목록화면" title="딜 목록화면"></p>
+<h5 id="통계화면"><a href="#통계화면" class="headerlink" title="통계화면"></a>통계화면</h5><p><img src="/images/ionic/p2p_statistics.webp" alt="통계화면" title="통계화면"></p>
+<h4 id="api-만들기"><a href="#api-만들기" class="headerlink" title="api 만들기"></a>api 만들기</h4><p>node를 이용해서 api 서버를 만들고, 스크랩핑할 수 있도록 작업합니다.</p>
+<p>필수정보만 디비스키마를 만들어서 필요한 정보를 저장<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`p2p`</span>.<span class="string">`deal`</span> (</span><br><span class="line">  <span class="string">`id`</span> <span class="built_in">INT</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT <span class="keyword">COMMENT</span> <span class="string">'딜 아이디 '</span>,</span><br><span class="line">  <span class="string">`siteCode`</span> <span class="built_in">VARCHAR</span>(<span class="number">45</span>) <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> <span class="string">'utf8'</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`dealCode`</span> <span class="built_in">VARCHAR</span>(<span class="number">45</span>) <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> <span class="string">'utf8'</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`dealTitle`</span> <span class="built_in">VARCHAR</span>(<span class="number">100</span>) <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> <span class="string">'utf8'</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`dealUrl`</span> <span class="built_in">VARCHAR</span>(<span class="number">500</span>) <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> <span class="string">'utf8'</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`dealAmount`</span> <span class="built_in">INT</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'딜 금액 '</span>,</span><br><span class="line">  <span class="string">`dealRevenueRate`</span> <span class="built_in">FLOAT</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'수익률 '</span>,</span><br><span class="line">  <span class="string">`dealMonthPeriod`</span> <span class="built_in">INT</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'딜 기간 (월 기준) '</span>,</span><br><span class="line">  <span class="string">`dealRunoutRate`</span> <span class="built_in">FLOAT</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'딜 소진율 '</span>,</span><br><span class="line">  <span class="string">`updatedAt`</span> DATETIME <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="keyword">CURRENT_TIMESTAMP</span> <span class="keyword">ON</span> <span class="keyword">UPDATE</span> <span class="keyword">CURRENT_TIMESTAMP</span> <span class="keyword">COMMENT</span> <span class="string">'갱신일시\n'</span>,</span><br><span class="line">  <span class="string">`createdAt`</span> DATETIME <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="keyword">CURRENT_TIMESTAMP</span> <span class="keyword">COMMENT</span> <span class="string">'생성일시\n'</span>,</span><br><span class="line">  PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`p2p`</span>.<span class="string">`site`</span> (</span><br><span class="line">  <span class="string">`siteCode`</span> <span class="built_in">VARCHAR</span>(<span class="number">45</span>) <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> <span class="string">'utf8'</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'사이트 코드 '</span>,</span><br><span class="line">  <span class="string">`siteName`</span> <span class="built_in">VARCHAR</span>(<span class="number">100</span>) <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> <span class="string">'utf8'</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'사이트 이름 '</span>,</span><br><span class="line">  <span class="string">`siteUrl`</span> <span class="built_in">VARCHAR</span>(<span class="number">500</span>) <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> <span class="string">'utf8'</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'사이트 주소 '</span>,</span><br><span class="line">  <span class="string">`siteLogo`</span> <span class="built_in">VARCHAR</span>(<span class="number">500</span>) <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> <span class="string">'utf8'</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'사이트 로고 '</span>,</span><br><span class="line">  PRIMARY <span class="keyword">KEY</span> (<span class="string">`siteCode`</span>));</span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -566,7 +584,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://j2yes.github.io/2019/01/19/cloudiajs/claudiajs-get-started/">
+    <link itemprop="mainEntityOfPage" href="https://j2yes.github.io/2019/02/04/ionic/ionic-get-started/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="j2yes">
@@ -586,7 +604,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/01/19/cloudiajs/claudiajs-get-started/" class="post-title-link" itemprop="https://j2yes.github.io/page/5/index.html">claudiajs-get-started</a>
+                <a href="/2019/02/04/ionic/ionic-get-started/" class="post-title-link" itemprop="https://j2yes.github.io/page/5/index.html">ionic-get-started</a>
               
             
           </h1>
@@ -611,7 +629,7 @@
                 
               
 
-              <time title="Created: 2019-01-19 22:20:19 / Modified: 22:29:05" itemprop="dateCreated datePublished" datetime="2019-01-19T22:20:19+09:00">2019-01-19</time>
+              <time title="Created: 2019-02-04 15:49:46 / Modified: 16:13:17" itemprop="dateCreated datePublished" datetime="2019-02-04T15:49:46+09:00">2019-02-04</time>
             
 
             
@@ -633,7 +651,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/claudiajs/" itemprop="url" rel="index"><span itemprop="name">claudiajs</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/ionic/" itemprop="url" rel="index"><span itemprop="name">ionic</span></a></span>
 
                 
                 
@@ -676,35 +694,66 @@
       
         
           
-            <h3 id="claudiajs-https-claudiajs-com"><a href="#claudiajs-https-claudiajs-com" class="headerlink" title="claudiajs : https://claudiajs.com"></a>claudiajs : <a href="https://claudiajs.com" target="_blank" rel="noopener">https://claudiajs.com</a></h3><ol>
-<li>install claudia</li>
-<li>execute command <code>npm init</code></li>
-<li>make lambda.js</li>
-<li>set aws credential on user root path</li>
-<li>create lambda function as command with profile</li>
-<li>invoke lambda with profile : <code>claudia test-lambda --profile claudia</code></li>
-<li>update lambda : <code>claudia update</code></li>
-<li>mongodb example project</li>
-</ol>
-<h3 id="install-claudia"><a href="#install-claudia" class="headerlink" title="install claudia"></a>install claudia</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># global installation</span><br><span class="line">npm install claudia -g</span><br><span class="line"></span><br><span class="line"># check installation</span><br><span class="line">claudia -version</span><br></pre></td></tr></table></figure>
-<h3 id="make-lambda-project"><a href="#make-lambda-project" class="headerlink" title="make lambda project"></a>make lambda project</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir example</span><br><span class="line">cd example</span><br><span class="line">npm init</span><br></pre></td></tr></table></figure>
-<h3 id="make-a-lambda-js-file-https-docs-aws-amazon-com-lambda-latest-dg-nodejs-prog-model-handler-html"><a href="#make-a-lambda-js-file-https-docs-aws-amazon-com-lambda-latest-dg-nodejs-prog-model-handler-html" class="headerlink" title="make a lambda.js file : https://docs.aws.amazon.com/lambda/latest/dg/nodejs-prog-model-handler.html"></a>make a lambda.js file : <a href="https://docs.aws.amazon.com/lambda/latest/dg/nodejs-prog-model-handler.html" target="_blank" rel="noopener">https://docs.aws.amazon.com/lambda/latest/dg/nodejs-prog-model-handler.html</a></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.normal example</span></span><br><span class="line">exports.myHandler = <span class="function"><span class="keyword">function</span>(<span class="params">event, context</span>) </span>&#123;</span><br><span class="line">   ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 2.you can use callback</span></span><br><span class="line">exports.handler = <span class="function"><span class="keyword">function</span>(<span class="params">event, context, callback</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//console.log('Received event:', JSON.stringify(event, null, 2));</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'value1 ='</span>, event.key1);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'value2 ='</span>, event.key2);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'value3 ='</span>, event.key3);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'remaining time ='</span>, context.getRemainingTimeInMillis());</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'functionName ='</span>, context.functionName);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'AWSrequestID ='</span>, context.awsRequestId);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'logGroupName ='</span>, context.log_group_name);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'logStreamName ='</span>, context.log_stream_name);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'clientContext ='</span>, context.clientContext);</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> context.identity !== <span class="string">'undefined'</span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Cognitoidentity ID ='</span>, context.identity.cognitoIdentityId);</span><br><span class="line">    &#125;    </span><br><span class="line">    callback(<span class="literal">null</span>, event.key1); <span class="comment">// Echo back the first key value</span></span><br><span class="line">    <span class="comment">// or</span></span><br><span class="line">    <span class="comment">// callback("some error type"); </span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 3.below is available on node 8.xx</span></span><br><span class="line">exports.myHandler = <span class="keyword">async</span> <span class="function"><span class="keyword">function</span>(<span class="params">event, context</span>) </span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">"value1 = "</span> + event.key1);</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">"value2 = "</span> + event.key2);  </span><br><span class="line">   <span class="keyword">return</span> <span class="string">"some success message"</span>;</span><br><span class="line">   <span class="comment">// or </span></span><br><span class="line">   <span class="comment">// throw new Error(“some error type”); </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="setting-AWS-IAM"><a href="#setting-AWS-IAM" class="headerlink" title="setting AWS IAM"></a>setting AWS IAM</h3><ul>
-<li><a href="https://claudiajs.com/tutorials/installing.html" target="_blank" rel="noopener">https://claudiajs.com/tutorials/installing.html</a> </li>
-<li><a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html" target="_blank" rel="noopener">https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html</a></li>
+            <h3 id="프로젝트-구조"><a href="#프로젝트-구조" class="headerlink" title="프로젝트 구조"></a>프로젝트 구조</h3><p><img src="/images/ionic/folder_structure.png" alt="폴더 구조" title="folder_structure"></p>
+<ul>
+<li>src/app : app.module.ts가 entry point ( index.html에서 ion-app에 표시될 root component가 entry point 인 app.module파일에 지정되어 있다. )</li>
+<li>src/pages : 화면 페이지 단위로 구분</li>
+<li>src/asset : 이미지 등 </li>
 </ul>
-<p>make file <code>.aws/credentials</code>  </p>
-<blockquote>
-<p>first line is profile name.</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[claudia]</span><br><span class="line">aws_access_key_id = YOUR_ACCESS_KEY</span><br><span class="line">aws_secret_access_key = YOUR_ACCESS_SECRET</span><br></pre></td></tr></table></figure>
-<h3 id="create-lambda-function"><a href="#create-lambda-function" class="headerlink" title="create lambda function"></a>create lambda function</h3><p>seoul region is <code>ap-northeast-2</code>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># create lambda</span><br><span class="line">claudia create --region ap-northeast-2 --handler lambda.myHandler --profile claudia</span><br></pre></td></tr></table></figure>
-<h3 id="invoke-lambda"><a href="#invoke-lambda" class="headerlink" title="invoke lambda"></a>invoke lambda</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#&apos;test-&apos; prefix is required.</span><br><span class="line">claudia test-lambda --profile claudia</span><br></pre></td></tr></table></figure>
-<h3 id="update-lambda-with-npm-run-command"><a href="#update-lambda-with-npm-run-command" class="headerlink" title="update lambda with npm run command"></a>update lambda with npm run command</h3><p>package.json</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">  "scripts": &#123;</span><br><span class="line">    "test": "claudia test-lambda --profile claudia",</span><br><span class="line">    "deploy": "claudia update --profile claudia"</span><br><span class="line">  &#125;,</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p>update command : <code>npm run deploy</code></p>
-<h3 id="example-code"><a href="#example-code" class="headerlink" title="example code"></a>example code</h3><p><a href="https://github.com/j2yes/lambda-mongodb" target="_blank" rel="noopener">github</a></p>
+<h3 id="ionic-view-life-cycle"><a href="#ionic-view-life-cycle" class="headerlink" title="ionic view life cycle"></a>ionic view life cycle</h3><p><a href="http://blog.ionic.io/navigating-lifecycle-events/" target="_blank" rel="noopener">http://blog.ionic.io/navigating-lifecycle-events/</a></p>
+<h3 id="페이지-파일-구성"><a href="#페이지-파일-구성" class="headerlink" title="페이지 파일 구성"></a>페이지 파일 구성</h3><p>한페이지에 ts, html, scss 파일 구조를 유지하는게 좋음</p>
+<p>예) hello-ionic/</p>
+<ul>
+<li>hello-ionic.html</li>
+<li>hello-ionic.scss</li>
+<li>hello-ionic.ts<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  <span class="comment">//selector 는 필수는 아니지만 특정 페이지에서 기본 스타일 적용에 유용함</span></span><br><span class="line">  selector: <span class="string">'page-hello-ionic'</span>,</span><br><span class="line">  templateUrl: <span class="string">'hello-ionic.html'</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloIonicPage</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="ionic-navigation"><a href="#ionic-navigation" class="headerlink" title="ionic navigation"></a>ionic navigation</h3><p>ionic은 navigationController를 이용해서 flexible하게 페이지를 이동할 수 있다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#ion-nav 태그에 root로 지정된 페이지가 가장 상위 페이지</span><br><span class="line">&lt;ion-nav [root]=&quot;rootPage&quot;&gt;&lt;/ion-nav&gt;</span><br></pre></td></tr></table></figure>
+<p>페이지 이동 (push, pop)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OtherPage</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(public navCtrl: NavController) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//다른 페이지로 이동하기</span></span><br><span class="line">  goToOtherPage() &#123;</span><br><span class="line">    <span class="comment">//push another page onto the history stack</span></span><br><span class="line">    <span class="comment">//causing the nav controller to animate the new page in</span></span><br><span class="line">    <span class="keyword">this</span>.navCtrl.push(OtherPage);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//뒤로가기 (ion-navbar 태그를 페이지에 포함하고 있는 경우, 백버튼에 대한 이벤트 처리가 자동으로 처리됨)</span></span><br><span class="line">  goBack() &#123;</span><br><span class="line">    <span class="keyword">this</span>.navCtrl.pop();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="탭-페이지이동-처리"><a href="#탭-페이지이동-처리" class="headerlink" title="탭 페이지이동 처리"></a>탭 페이지이동 처리</h4><p>탭으로 구성된 화면은 각각의 탭이 최상위 화면이 되어 각 탭마다 고유한 아이디를 갖고 있는 navigationController를 이용함</p>
+<h3 id="component-정리하기-http-ionicframework-com-docs-api"><a href="#component-정리하기-http-ionicframework-com-docs-api" class="headerlink" title="component 정리하기 (http://ionicframework.com/docs//api/)"></a>component 정리하기 (<a href="http://ionicframework.com/docs//api/" target="_blank" rel="noopener">http://ionicframework.com/docs//api/</a>)</h3><h4 id="http-통신하기"><a href="#http-통신하기" class="headerlink" title="http 통신하기"></a>http 통신하기</h4><p>http 를 이용하는 방법은 두가지</p>
+<ul>
+<li>@angular/http 사용</li>
+<li>@ionic-native/http 사용 </li>
+<li>차이점 : <a href="https://forum.ionicframework.com/t/what-is-the-difference-between-angular-and-native-http/73095" target="_blank" rel="noopener">https://forum.ionicframework.com/t/what-is-the-difference-between-angular-and-native-http/73095</a></li>
+</ul>
+<p>@ionic-native/http 사용 예시</p>
+<ul>
+<li><p>설치</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#설치</span><br><span class="line">ionic plugin add --save cordova-plugin-http</span><br><span class="line">npm install --save @ionic-native/http</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>설정</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// provider에 추가하기</span></span><br><span class="line"><span class="comment">// app.module.ts 파일에 provider로 추가하고 사용해야 함</span></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">providers: [</span><br><span class="line">    StatusBar,</span><br><span class="line">    SplashScreen,</span><br><span class="line">    HTTP,</span><br><span class="line">    &#123;<span class="attr">provide</span>: ErrorHandler, <span class="attr">useClass</span>: IonicErrorHandler&#125;</span><br><span class="line">  ]</span><br><span class="line"></span><br><span class="line"><span class="comment">// ...</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>@angular/http 사용 예시</p>
+<ul>
+<li>설정<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// app.module.ts 파일에 모듈 추가하고 사용해야 함</span></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="keyword">import</span> &#123; HttpModule &#125; <span class="keyword">from</span> <span class="string">'@angular/http'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line">imports: [</span><br><span class="line">  BrowserModule,</span><br><span class="line">  HttpModule,</span><br><span class="line">  IonicModule.forRoot(MyApp)</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="참조문서"><a href="#참조문서" class="headerlink" title="참조문서"></a>참조문서</h4><ul>
+<li><a href="https://ionicframework.com/docs/native/http/" target="_blank" rel="noopener">https://ionicframework.com/docs/native/http/</a></li>
+<li><a href="http://blog.ionic.io/10-minutes-with-ionic-2-calling-an-api/" target="_blank" rel="noopener">http://blog.ionic.io/10-minutes-with-ionic-2-calling-an-api/</a></li>
+</ul>
+<h4 id="whitelist-설정-http-www-gajotres-net-ionic-2-making-rest-http-requests-like-a-pro"><a href="#whitelist-설정-http-www-gajotres-net-ionic-2-making-rest-http-requests-like-a-pro" class="headerlink" title="whitelist 설정 (http://www.gajotres.net/ionic-2-making-rest-http-requests-like-a-pro/)"></a>whitelist 설정 (<a href="http://www.gajotres.net/ionic-2-making-rest-http-requests-like-a-pro/" target="_blank" rel="noopener">http://www.gajotres.net/ionic-2-making-rest-http-requests-like-a-pro/</a>)</h4><ul>
+<li><p>설치</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cordova plugin add cordova-plugin-whitelist</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>proxy 설정하기</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#프로젝트의 ionic.config.json 파일에 설정</span><br><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;auction&quot;,  &quot;app_id&quot;: &quot;&quot;,  &quot;type&quot;: &quot;ionic-angular&quot;,  &quot;proxies&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;path&quot;: &quot;/apt&quot;,      &quot;proxyUrl&quot;: &quot;http://openapi.molit.go.kr/OpenAPI_ToolInstallPackage/service/rest/RTMSOBJSvc/getRTMSDataSvcAptTradeDev&quot;    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="typescript-기본"><a href="#typescript-기본" class="headerlink" title="typescript 기본"></a>typescript 기본</h3><p><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" rel="noopener">https://www.typescriptlang.org/docs/handbook/basic-types.html</a></p>
+<h3 id="angular2-기본-문법"><a href="#angular2-기본-문법" class="headerlink" title="angular2 기본 문법"></a>angular2 기본 문법</h3><p>반복문</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;li *ngFor=&quot;let hero of heroes” (click)=&quot;onSelect(hero)&gt;</span><br><span class="line">    &lt;span class=&quot;badge&quot;&gt;&#123;&#123;hero.id&#125;&#125;&lt;/span&gt; &#123;&#123;hero.name&#125;&#125;</span><br><span class="line">&lt;/li&gt;</span><br></pre></td></tr></table></figure>
+<p>조건문</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div *ngIf=&quot;selectedHero&quot;&gt;</span><br><span class="line">  &lt;h2&gt;&#123;&#123;selectedHero.name&#125;&#125; details!&lt;/h2&gt;</span><br><span class="line">  &lt;div&gt;&lt;label&gt;id: &lt;/label&gt;&#123;&#123;selectedHero.id&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;label&gt;name: &lt;/label&gt;</span><br><span class="line">    &lt;input [(ngModel)]=&quot;selectedHero.name&quot; placeholder=&quot;name&quot;/&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>동적 스타일</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;li *ngFor=&quot;let hero of heroes&quot;</span><br><span class="line">  [class.selected]=&quot;hero === selectedHero&quot;</span><br><span class="line">  (click)=&quot;onSelect(hero)&quot;&gt;</span><br><span class="line">  &lt;span class=&quot;badge&quot;&gt;&#123;&#123;hero.id&#125;&#125;&lt;/span&gt; &#123;&#123;hero.name&#125;&#125;</span><br><span class="line">&lt;/li&gt;</span><br></pre></td></tr></table></figure>
+<p>@Injectable() 사용하기 : <a href="https://angular.io/docs/ts/latest/guide/dependency-injection.html" target="_blank" rel="noopener">https://angular.io/docs/ts/latest/guide/dependency-injection.html</a></p>
 
           
         
@@ -750,7 +799,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -793,7 +842,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -873,7 +922,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">21</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">23</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

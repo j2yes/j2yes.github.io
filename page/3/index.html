@@ -374,7 +374,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://j2yes.github.io/2019/02/04/ionic/ionic-make-android-jar/">
+    <link itemprop="mainEntityOfPage" href="https://j2yes.github.io/2019/02/17/nodejs/nodejs-passport/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="j2yes">
@@ -394,7 +394,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/02/04/ionic/ionic-make-android-jar/" class="post-title-link" itemprop="https://j2yes.github.io/page/3/index.html">ionic-make-android-jar</a>
+                <a href="/2019/02/17/nodejs/nodejs-passport/" class="post-title-link" itemprop="https://j2yes.github.io/page/3/index.html">passport</a>
               
             
           </h1>
@@ -419,7 +419,7 @@
                 
               
 
-              <time title="Created: 2019-02-04 16:18:33 / Modified: 16:21:28" itemprop="dateCreated datePublished" datetime="2019-02-04T16:18:33+09:00">2019-02-04</time>
+              <time title="Created: 2019-02-17 17:11:42 / Modified: 18:31:52" itemprop="dateCreated datePublished" datetime="2019-02-17T17:11:42+09:00">2019-02-17</time>
             
 
             
@@ -441,7 +441,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/ionic/" itemprop="url" rel="index"><span itemprop="name">ionic</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/nodejs/" itemprop="url" rel="index"><span itemprop="name">nodejs</span></a></span>
 
                 
                 
@@ -484,14 +484,56 @@
       
         
           
-            <h4 id="릴리즈-버전-apk-파일-생성"><a href="#릴리즈-버전-apk-파일-생성" class="headerlink" title="릴리즈 버전 apk 파일 생성"></a>릴리즈 버전 apk 파일 생성</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ionic cordova build android --release</span><br></pre></td></tr></table></figure>
-<p>command를 입력하면 아래처럼 빌드결과가 출력됩니다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">:transformNative_libsWithMergeJniLibsForRelease</span><br><span class="line">:processReleaseJavaRes UP-TO-DATE</span><br><span class="line">:transformResourcesWithMergeJavaResForRelease</span><br><span class="line">:packageRelease</span><br><span class="line">:assembleRelease</span><br><span class="line">:cdvBuildRelease</span><br><span class="line"></span><br><span class="line">BUILD SUCCESSFUL    </span><br><span class="line"></span><br><span class="line">Total time: 22.868 secs</span><br><span class="line">Built the following apk(s): </span><br><span class="line">        /workspace_path/platforms/android/build/outputs/apk/android-release-unsigned.apk</span><br></pre></td></tr></table></figure>
-<h4 id="keystore-파일만들기"><a href="#keystore-파일만들기" class="headerlink" title="keystore 파일만들기"></a>keystore 파일만들기</h4><p>keystore를 만들 때 password를 물어보는데, 잘 저장해 두세요.<br>아래 굵은 글씨로 작성한 sign key도 잘 저장해 두어야 합니다.<br>(* keystore는 처음 한번만 만들어 사용합니다.)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -genkey -v -keystore stroke-key.keystore -alias **its_my_sign_key** -keyalg RSA -keysize 2048 -validity 10000</span><br></pre></td></tr></table></figure></p>
-<h4 id="apk-sign하기"><a href="#apk-sign하기" class="headerlink" title="apk sign하기"></a>apk sign하기</h4><p>위에서 만든 릴리즈버전 apk에 아래 command로 sign을 해주자 (keystore 만들 때 지정한 password를 물어봅니다)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore stroke-key.keystore android-release-unsigned.apk **its_my_sign_key**</span><br></pre></td></tr></table></figure>
-<h4 id="apk-align-하기"><a href="#apk-align-하기" class="headerlink" title="apk align 하기"></a>apk align 하기</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/Library/Android/sdk/build-tools/25.0.2/zipalign -v 4 /path/android-release-unsigned.apk android-release-aligned.apk</span><br></pre></td></tr></table></figure>
-<p><strong><em>최종 아웃풋 파일인 <code>android-release-aligned.apk</code>를 마켓에 업로드할 수 있습니다.</em></strong></p>
+            <h2 id="passport-http-www-passportjs-org"><a href="#passport-http-www-passportjs-org" class="headerlink" title="passport : http://www.passportjs.org/"></a>passport : <a href="http://www.passportjs.org/" target="_blank" rel="noopener">http://www.passportjs.org/</a></h2><blockquote>
+<p>Simple, unobtrusive authentication for Node.js</p>
+</blockquote>
+<p>패스포트는 인증을 위한 다양한 Strategy Package를 제공합니다. 아래 본문은 그 중 Local Strategy에 대해 설명합니다.</p>
+<h2 id="local-strategy"><a href="#local-strategy" class="headerlink" title="local strategy"></a>local strategy</h2><p>외부 시스템의 인증 연동없이 직접 구현하는 방식이며 사용자 상태 관리를 위해 세션을 사용합니다.<br>로그인, 리소스 호출에 대한 흐름을 정리하고 코드로 설명하겠습니다.</p>
+<h2 id="사전작업"><a href="#사전작업" class="headerlink" title="사전작업"></a>사전작업</h2><h3 id="패스포트가-자동으로-생성해주는-함수-변수"><a href="#패스포트가-자동으로-생성해주는-함수-변수" class="headerlink" title="패스포트가 자동으로 생성해주는 함수 (변수)"></a>패스포트가 자동으로 생성해주는 함수 (변수)</h3><ul>
+<li>req.user : 로그인한 사용자 정보</li>
+<li>req.login(=logIn) : 로그인 함수 (세션에 사용자 정보를 저장)</li>
+<li>req.logout : 로그아웃 함수 (세션정보 비움)</li>
+<li>req.isAuthenticated : 요청 사용자의 인증여부 확인</li>
+</ul>
+<h3 id="Session-Storage-설정"><a href="#Session-Storage-설정" class="headerlink" title="Session Storage 설정"></a>Session Storage 설정</h3><ul>
+<li>express 는 기본 session을 in-memory 방식으로 저장하기 때문에 memory leak 문제가 있음(production 환경에서 사용 X)</li>
+<li>memory leak 방지 등 몇 가지 목적으로 session-storage 사용 추천 (mysql, mongodb, redis 등 모두 사용 가능함)</li>
+<li>session 은 기본적으로 passport가 아닌 express에서 관리해주고 있음, passport에서 회원정보를 기본적으로 저장하는 req.user정보는 req.session.passport.user를 의미하고 response하는 시점에 세션정보를 갱신함(store를 따로 써도 자동으로 갱신해줌)</li>
+<li>response하는 시점에 session을 업데이트하기 때문에 문제가 발생하면 req.logIn을 이용해서 serialize를 명시적으로 해줄 수 있음</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>) ;</span><br><span class="line"><span class="keyword">const</span> passport = <span class="built_in">require</span>(<span class="string">'passport'</span>); </span><br><span class="line"><span class="keyword">const</span> session = <span class="built_in">require</span>(<span class="string">'express-session'</span>); </span><br><span class="line"><span class="keyword">const</span> RedisStore = <span class="built_in">require</span>(<span class="string">'connect-redis'</span>)(session);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> app = express() ;</span><br><span class="line">app.use(session(&#123; </span><br><span class="line">  store: <span class="keyword">new</span> RedisStore(&#123;</span><br><span class="line">    url: config.redisStore.url</span><br><span class="line">  &#125;),</span><br><span class="line">  secret: config.redisStore.secret,</span><br><span class="line">  <span class="comment">//resave false는 session이 갱신된 경우만 데이터를 업데이트하도록 함(만료시간값 갱신은 관련없음)</span></span><br><span class="line">  resave: <span class="literal">false</span>,</span><br><span class="line">  saveUninitialized: <span class="literal">false</span></span><br><span class="line">&#125;));</span><br><span class="line"><span class="comment">//express 연결</span></span><br><span class="line">app.use(passport.initialize()); </span><br><span class="line"><span class="comment">//영속적인 로그인 세션 관리 (deserialize)</span></span><br><span class="line">app.use(passport.session());</span><br></pre></td></tr></table></figure>
+<h3 id="passport-기본-함수-구현"><a href="#passport-기본-함수-구현" class="headerlink" title="passport 기본 함수 구현"></a>passport 기본 함수 구현</h3><h4 id="passport-id-amp-pwd-체크"><a href="#passport-id-amp-pwd-체크" class="headerlink" title="passport id &amp; pwd 체크"></a>passport id &amp; pwd 체크</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> passport = <span class="built_in">require</span>(<span class="string">'passport'</span>) </span><br><span class="line"><span class="keyword">const</span> LocalStrategy = <span class="built_in">require</span>(<span class="string">'passport-local'</span>).Strategy</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> user = &#123; </span><br><span class="line">  username: <span class="string">'test-user'</span>,</span><br><span class="line">  password: <span class="string">'test-password'</span>,</span><br><span class="line">  id: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//post로 넘어오는 parameter명으로 변수명을 설정한다 (email, passwd) </span></span><br><span class="line">passport.use(<span class="keyword">new</span> LocalStrategy(&#123;</span><br><span class="line">    usernameField: <span class="string">'email'</span>,</span><br><span class="line">    passwordField: <span class="string">'passwd'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">username, password, done</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//findUser는 실제로 database에서 user를 조회해야 함</span></span><br><span class="line">    findUser(username, <span class="function"><span class="keyword">function</span> (<span class="params">err, user</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        <span class="keyword">return</span> done(err)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//일차하는 user가 없는 경우 ( = 일차하는 id 없음 )</span></span><br><span class="line">      <span class="keyword">if</span> (!user) &#123;</span><br><span class="line">        <span class="keyword">return</span> done(<span class="literal">null</span>, <span class="literal">false</span>, &#123; <span class="attr">message</span>: <span class="string">'Incorrect user information.'</span> &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//조회한 user의 password가 입력된 password와 불일치 ( = 비밀번호 틀림 )</span></span><br><span class="line">      <span class="keyword">if</span> (!user.validPassword(password)) &#123;</span><br><span class="line">        <span class="keyword">return</span> done(<span class="literal">null</span>, <span class="literal">false</span>, &#123; <span class="attr">message</span>: <span class="string">'Incorrect user information.'</span> &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//예외 상황을 처리 완료 후 callback 두번째 parameter에 false가 아닌 값(searched user object)을 넘겨주면 로그인 성공</span></span><br><span class="line">      <span class="keyword">return</span> done(<span class="literal">null</span>, user)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">))</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="comment">//LocalStrategy의 parameter로 정의된 익명함수는 verify callback이다</span></span><br><span class="line"><span class="comment">//verify callback은 request가 포함한 credential을 분석하여 done함수를 발생시킨다.</span></span><br><span class="line"><span class="comment">//done 함수는 인증 실패/성공여부를 포함하여 실행된다.</span></span><br><span class="line"><span class="comment">//done 함수는 passport.authenticate (로그인 api에서 사용하는 함수) 의 두번째 parameter로 실행된다.</span></span><br></pre></td></tr></table></figure>
+<h4 id="user-serialize"><a href="#user-serialize" class="headerlink" title="user serialize"></a>user serialize</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">passport.serializeUser(<span class="function"><span class="keyword">function</span>(<span class="params">user, done</span>) </span>&#123;</span><br><span class="line">    done(<span class="literal">null</span>, user);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// user를 두번째 인자로 넘기면 user 정보 전체를 session에 저장한다. user.id 로 id 정보만 저장하여 관리할 수 있음</span></span><br></pre></td></tr></table></figure>
+<h4 id="user-deserialize"><a href="#user-deserialize" class="headerlink" title="user deserialize"></a>user deserialize</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">passport.deserializeUser(<span class="function"><span class="keyword">function</span>(<span class="params">user, done</span>) </span>&#123;</span><br><span class="line">    done(<span class="literal">null</span>, user);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// session 에 저장된 user 정보를 deserialize 함, id만 관리한 경우 user 정보가 필요하면 DB에서 조회해야 함</span></span><br></pre></td></tr></table></figure>
+<h4 id="authentication-middleware"><a href="#authentication-middleware" class="headerlink" title="authentication middleware"></a>authentication middleware</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">authenticationMiddleware</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (req.isAuthenticated()) &#123;</span><br><span class="line">      <span class="keyword">return</span> next()</span><br><span class="line">    &#125;</span><br><span class="line">    res.redirect(<span class="string">'/'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="login-flow"><a href="#login-flow" class="headerlink" title="login flow"></a>login flow</h2><p>flow</p>
+<ol>
+<li>id 와 password를 post method로 login url로 요청</li>
+<li>login router에서 passport.authenticate 함수를 이용해 strategy를 선택</li>
+<li>선택된 strategy에서 id, password 비교 (db 조회), 비교 결과를 callback 함수를 이용해서 passport.authenticate 두번째 인자 함수로 전달</li>
+<li>serialize 를 통해 session에 user 정보 저장</li>
+<li>callback 함수안에서 req.logIn 함수 실행</li>
+<li>Set-Cookie 헤더에 세션키값을 저장하여  response</li>
+<li>session storage를 사용하는 경우 response할 때 req.session 에 있는 user 정보를 storage에 저장</li>
+</ol>
+<p>code</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">'/login'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  passport.authenticate(<span class="string">'local'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, user, info</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123; <span class="keyword">return</span> next(err); &#125;</span><br><span class="line">    <span class="keyword">if</span> (!user) &#123; <span class="keyword">return</span> res.redirect(<span class="string">'/login'</span>); &#125;</span><br><span class="line">    <span class="comment">//passport가 제공하는 login함수(=logIn)을 이용하여 login session 저장</span></span><br><span class="line">    req.logIn(user, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (err) &#123; <span class="keyword">return</span> next(err); &#125;</span><br><span class="line">      <span class="keyword">return</span> res.redirect(<span class="string">'/users/'</span> + user.username);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;)(req, res, next);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// logout 함수로 req.user 를 삭제하고 관련 login session을 비움</span></span><br><span class="line">app.get(<span class="string">'/logout'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</span><br><span class="line">  req.logout();</span><br><span class="line">  res.redirect(<span class="string">'/'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="resource-authentication-flow"><a href="#resource-authentication-flow" class="headerlink" title="resource authentication flow"></a>resource authentication flow</h2><p>flow </p>
+<ol>
+<li>endpont로 request 보냄</li>
+<li>cookie이용해서 session 정보 조회</li>
+<li>session 정보 deserialize 해서 user 정보 얻기</li>
+<li>req.isAuthenticate 함수를 이용해서 인증된 요청인지 확인</li>
+<li>인증된 경우 / 인증되지 않은 경우에 따라 처리</li>
+</ol>
+<p>code</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> passport = <span class="built_in">require</span>(<span class="string">'passport'</span>)</span><br><span class="line">app.get(<span class="string">'/resource'</span>, passport.authenticationMiddleware(), <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</span><br><span class="line">    res.render(<span class="string">'resource'</span>, &#123; <span class="attr">title</span>: <span class="string">'passport example'</span> &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="참조-링크"><a href="#참조-링크" class="headerlink" title="참조 링크"></a>참조 링크</h2><ul>
+<li><a href="https://blog.risingstack.com/node-hero-node-js-authentication-passport-js/" target="_blank" rel="noopener">https://blog.risingstack.com/node-hero-node-js-authentication-passport-js/</a></li>
+<li><a href="https://github.com/passport/express-4.x-local-example/blob/master/server.js" target="_blank" rel="noopener">https://github.com/passport/express-4.x-local-example/blob/master/server.js</a></li>
+<li><a href="https://scotch.io/tutorials/easy-node-authentication-setup-and-local" target="_blank" rel="noopener">https://scotch.io/tutorials/easy-node-authentication-setup-and-local</a></li>
+<li><a href="https://bcho.tistory.com/920" target="_blank" rel="noopener">https://bcho.tistory.com/920</a></li>
+</ul>
 
           
         
@@ -548,7 +590,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://j2yes.github.io/2019/02/04/ionic/ionic-app-play-store-registration/">
+    <link itemprop="mainEntityOfPage" href="https://j2yes.github.io/2019/02/04/ionic/ionic-set-environment/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="j2yes">
@@ -568,7 +610,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/02/04/ionic/ionic-app-play-store-registration/" class="post-title-link" itemprop="https://j2yes.github.io/page/3/index.html">ionic-app-play-store-registration</a>
+                <a href="/2019/02/04/ionic/ionic-set-environment/" class="post-title-link" itemprop="https://j2yes.github.io/page/3/index.html">ionic-set-environment</a>
               
             
           </h1>
@@ -593,7 +635,7 @@
                 
               
 
-              <time title="Created: 2019-02-04 16:16:26 / Modified: 16:21:28" itemprop="dateCreated datePublished" datetime="2019-02-04T16:16:26+09:00">2019-02-04</time>
+              <time title="Created: 2019-02-04 16:19:45 / Modified: 16:21:41" itemprop="dateCreated datePublished" datetime="2019-02-04T16:19:45+09:00">2019-02-04</time>
             
 
             
@@ -658,32 +700,41 @@
       
         
           
-            <h3 id="구글-플레이-개발자-콘솔에-접속해보자-https-play-google-com-apps-publish"><a href="#구글-플레이-개발자-콘솔에-접속해보자-https-play-google-com-apps-publish" class="headerlink" title="구글 플레이 개발자 콘솔에 접속해보자 (https://play.google.com/apps/publish)"></a>구글 플레이 개발자 콘솔에 접속해보자 (<a href="https://play.google.com/apps/publish" target="_blank" rel="noopener">https://play.google.com/apps/publish</a>)</h3><blockquote>
-<p>업로드전에 앱의 아이콘과 스플래쉬 이미지부터 변경해두자 (png 파일이어야 함)</p>
+            <h2 id="공식-document"><a href="#공식-document" class="headerlink" title="공식 document"></a>공식 document</h2><p><a href="http://ionicframework.com/docs/intro/installation/" target="_blank" rel="noopener">http://ionicframework.com/docs/intro/installation/</a></p>
+<h2 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># permission deny되는 경우 sudo로 설치해주세요</span><br><span class="line">npm install -g ionic cordova</span><br></pre></td></tr></table></figure>
+<p><strong><em>node는 필수로 설치되어 있어야 합니다.</em></strong> </p>
+<h2 id="프로젝트-생성-실행"><a href="#프로젝트-생성-실행" class="headerlink" title="프로젝트 생성 / 실행"></a>프로젝트 생성 / 실행</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#프로젝트만들기</span><br><span class="line">#https://ionicframework.com/getting-started/</span><br><span class="line">ionic start myFirstApp template_name</span><br><span class="line"></span><br><span class="line">##template type</span><br><span class="line">#tabs(default) : a simple 3 tab layout</span><br><span class="line">#sidemenu: a layout with a swipable menu on the side</span><br><span class="line">#blank: a bare starter with a single page</span><br><span class="line">#super: starter project with over 14 ready to use page designs</span><br><span class="line">#tutorial: a guided starter project</span><br><span class="line"></span><br><span class="line">#생성한 프로젝트로 이동</span><br><span class="line">cd myFirstApp</span><br><span class="line"></span><br><span class="line">#실행하기(run on browser)</span><br><span class="line">ionic serve</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>에러[Error: Cannot find module ‘reflect-metadata’]발생하는 경우 node 버전 6.xx로 올려주세요.<br><a href="https://github.com/driftyco/ionic/issues/9689" target="_blank" rel="noopener">https://github.com/driftyco/ionic/issues/9689</a> </p>
 </blockquote>
-<p>참고사이트 </p>
-<ul>
-<li><a href="https://thenounproject.com/" target="_blank" rel="noopener">https://thenounproject.com/</a></li>
-<li><a href="https://www.iconfinder.com/" target="_blank" rel="noopener">https://www.iconfinder.com/</a></li>
+<h2 id="플랫폼별-개발환경-만들기"><a href="#플랫폼별-개발환경-만들기" class="headerlink" title="플랫폼별 개발환경 만들기"></a>플랫폼별 개발환경 만들기</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#프로젝트에 설치된 플랫폼 리스트 확인하기</span><br><span class="line">cordova platform ls</span><br><span class="line"></span><br><span class="line">#플랫폼별 요구사항 체크</span><br><span class="line">cordova requirements</span><br><span class="line"></span><br><span class="line">#프로젝트에 플랫폼 추가하기</span><br><span class="line">cordova platform add ios --save</span><br><span class="line">cordova platform add android --save</span><br></pre></td></tr></table></figure>
+<h3 id="ios-개발환경-만들기"><a href="#ios-개발환경-만들기" class="headerlink" title="ios 개발환경 만들기"></a>ios 개발환경 만들기</h3><ul>
+<li>app store에서 xcode 검색해서 설치하기</li>
+<li>iOS기기로 런치할 수 있는 개발 툴 설치<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g ios-sim</span><br><span class="line">npm install -g ios-deploy</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<h4 id="1-스토어-등록정보"><a href="#1-스토어-등록정보" class="headerlink" title="1. 스토어 등록정보"></a>1. 스토어 등록정보</h4><p><img src="/images/ionic/play_store.png" alt="스토어 화면" title="스토어 화면"></p>
-<p>애플리케이션 만들기를 하면 상단 화면과 같은 팝업을 볼 수 있다.</p>
-<p>만들기를 클릭한 후 상세화면에서 *가 체크된 필수 항목을 채워서 저장해야 한다.</p>
-<p>필수 항목을 채우기 위해서 아래 이미지 파일이 필요하다</p>
+<blockquote>
+<p>에러[xcode-select: error: tool ‘xcodebuild’ requires Xcode, but active developer directory ‘/Library/Developer/CommandLineTools’ is a command line tools instance]나는 경우<br><a href="http://frontend.diffthink.kr/2016/04/ios.html" target="_blank" rel="noopener">http://frontend.diffthink.kr/2016/04/ios.html</a></p>
+</blockquote>
+<p><img src="/images/ionic/ios_setting.png" alt="ios_setting" title="ios 설정"></p>
 <ul>
-<li>2개이상의 스크린샷 (JPEG 또는 24비트 PNG(알파 없음). 측면 최소 길이: 320픽셀. 측면 최대 길이: 3840픽셀.)</li>
-<li>고해상도 아이콘 (512x512, 32비트 PNG(알파 있음))</li>
-<li>그래픽 이미지 : 앱다운로드 화면의 배경으로 사용된다 (가로세로 1024x500, JPG 또는 24비트 PNG(알파 없음))</li>
+<li>xcode에서 preference -&gt; Locations command line tools 선택<ul>
+<li>참고 : <a href="https://cordova.apache.org/docs/en/latest/guide/platforms/ios/" target="_blank" rel="noopener">https://cordova.apache.org/docs/en/latest/guide/platforms/ios/</a></li>
 </ul>
-<p>필수 항목을 다 채우고 저장하면 메뉴에서 초록색 체크를 확인할 수 있다.</p>
-<p><img src="/images/ionic/play_store_menu.png" alt="메뉴 화면" title="메뉴 화면"></p>
-<p>이제 나머지 ! 표시가 있는 메뉴정보를 설정해보자</p>
-<h4 id="2-앱-등록하기"><a href="#2-앱-등록하기" class="headerlink" title="2. 앱 등록하기"></a>2. 앱 등록하기</h4><p>스토어에 업로드 가능한 apk 버전을 만들어야 합니다.<br>(참고 :  <a href="https://j2yes.github.io/ionic-2/make-android-jar/">APK 만들기</a> )</p>
-<h4 id="3-콘텐츠-등급-amp-가격-및-배포-설정"><a href="#3-콘텐츠-등급-amp-가격-및-배포-설정" class="headerlink" title="3. 콘텐츠 등급 &amp; 가격 및 배포 설정"></a>3. 콘텐츠 등급 &amp; 가격 및 배포 설정</h4><p>그냥 설문에 잘 응답하고 체크하면서 넘어가면 됩니다. </p>
-<p>여기까지 완료하면 오른쪽 상단에 출시준비 버튼을 보실 수 있습니다. </p>
-<p>출시준비 버튼을 누르면 나오는 화면에서 프로덕션 버전으로 업로드한 앱을 최종적으로 검토버튼으로 제출하면 됩니다.</p>
-<p>(이제 기다리는 일만 남았습니다. 끝!)</p>
-
+</li>
+</ul>
+<h3 id="android-개발환경-만들기"><a href="#android-개발환경-만들기" class="headerlink" title="android 개발환경 만들기"></a>android 개발환경 만들기</h3><p>android studio 설치하기 : <a href="https://developer.android.com/studio/install.html" target="_blank" rel="noopener">https://developer.android.com/studio/install.html</a></p>
+<p>ANDROID_HOME path 설정</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#mac에서 설정 </span><br><span class="line">#~.bash_profile 파일에 설정하기</span><br><span class="line">export ANDROID_HOME=&quot;/Users/username/Library/Android/sdk&quot;</span><br><span class="line">export ANDROID_TOOLS=&quot;/Users/username/Library/Android/sdk/tools&quot;</span><br><span class="line">export ANDROID_PLATFORM_TOOLS=&quot;/Users/username/Library/Android/sdk/platform-tools&quot;</span><br><span class="line">PATH=$PATH:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS</span><br></pre></td></tr></table></figure>
+<p>android 가상 디바이스에서 실행하기</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 가상 디바이스 목록보기</span><br><span class="line">adb devices</span><br><span class="line"></span><br><span class="line"># 결과목록</span><br><span class="line"># emulator-5554   device</span><br><span class="line"></span><br><span class="line"># 특정 타겟에서 실행하기</span><br><span class="line">ionic run android --target=emulator-5554</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>에러[Error: Could not find gradle wrapper within Android SDK. Might need to update your Android SDK.<br>Looked here: /Users/jiseob/Library/Android/sdk/tools/templates/gradle/wrapper]나는경우<br><a href="https://forum.ionicframework.com/t/error-could-not-find-gradle-wrapper-within-android-sdk-might-need-to-update-yo-ur-android-sdk/22056/15" target="_blank" rel="noopener">https://forum.ionicframework.com/t/error-could-not-find-gradle-wrapper-within-android-sdk-might-need-to-update-yo-ur-android-sdk/22056/15</a><br>링크 참고해서 다운로드 받은 파일은 tools에 덮기</p>
+</blockquote>
+<blockquote>
+<p>에러[Error: android: Command failed with exit code 2]<br>에뮬레이터 실행해 놓고, 빌드하기<br>참고하기 : <a href="https://cordova.apache.org/docs/en/latest/guide/platforms/android/" target="_blank" rel="noopener">https://cordova.apache.org/docs/en/latest/guide/platforms/android/</a></p>
+</blockquote>
+<h2 id="자주-사용하는-ionic-command"><a href="#자주-사용하는-ionic-command" class="headerlink" title="자주 사용하는 ionic command"></a>자주 사용하는 ionic command</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#특정 플랫폼으로 실행하기</span><br><span class="line">#실제 디바이스에 설치하기 (debugging &amp; developer mode 켜고 usb로 연결한 후 사용)</span><br><span class="line">#https://developer.android.com/studio/run/device.html#developer-device-options</span><br><span class="line">ionic cordova run android --device</span><br><span class="line">ionic cordova build android --release</span><br><span class="line">ionic cordova platform ls</span><br><span class="line"></span><br><span class="line"># browser에서 실행하기</span><br><span class="line">ionic serve </span><br><span class="line">ionic run browser</span><br><span class="line"></span><br><span class="line">##위의 두 커맨드는 브라우저에서 실행되지만 네이티브 기능을 사용하려면 밑의 커맨드를 이용해야 함</span><br><span class="line">#(plaform에 browser 추가 필요)</span><br><span class="line">#https://github.com/driftyco/ionic-native/issues/403</span><br><span class="line"></span><br><span class="line">#ionic serve runs your app as a website (meaning it doesn&apos;t have any Cordova capabilities)</span><br><span class="line">#ionic run browser runs your app in the Cordova browser platform, which will inject cordova.jsand any plugins that have browser capabilities</span><br></pre></td></tr></table></figure>
           
         
       
@@ -728,7 +779,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -771,7 +822,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -851,7 +902,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">21</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">23</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
