@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="private node package mangerwww.npmjs.com 에서도 개인이 한 달에 7$를 지불하면 private 패키지를 관리할 수 있다.여건만 된다면 사설 저장소를 설치해서 관리하는 것도 나쁘지 않다.미러링이나 캐쉬로 사용가능하기 때문에 private 으로 관리할 수 있다는 점 외에 장점이 많다.사설 패키지 매니저로 sinopia와 nexu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="npm-registry">
+<meta property="og:url" content="https://j2yes.github.io/2019/02/24/nodejs/npm-registry/index.html">
+<meta property="og:site_name" content="normal development">
+<meta property="og:description" content="private node package mangerwww.npmjs.com 에서도 개인이 한 달에 7$를 지불하면 private 패키지를 관리할 수 있다.여건만 된다면 사설 저장소를 설치해서 관리하는 것도 나쁘지 않다.미러링이나 캐쉬로 사용가능하기 때문에 private 으로 관리할 수 있다는 점 외에 장점이 많다.사설 패키지 매니저로 sinopia와 nexu">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://j2yes.github.io/images/npm-registry/create_repo.png">
+<meta property="og:image" content="https://j2yes.github.io/images/npm-registry/create_acc.png">
+<meta property="og:image" content="https://j2yes.github.io/images/npm-registry/set_realms.png">
+<meta property="og:image" content="https://j2yes.github.io/images/npm-registry/set_role.png">
+<meta property="article:published_time" content="2019-02-24T12:04:36.000Z">
+<meta property="article:modified_time" content="2020-07-17T14:47:06.702Z">
+<meta property="article:author" content="j2yes">
+<meta property="article:tag" content="nodejs">
+<meta property="article:tag" content="npm">
+<meta property="article:tag" content="nexus">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://j2yes.github.io/images/npm-registry/create_repo.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://j2yes.github.io/2019/02/24/nodejs/npm-registry/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>npm-registry | normal development</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92237726-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92237726-1');
+</script>
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">normal development</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-home&quot;&gt;&lt;&#x2F;i&gt; &lt;br &#x2F;&gt;Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-archive&quot;&gt;&lt;&#x2F;i&gt; &lt;br &#x2F;&gt;Archives</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-th&quot;&gt;&lt;&#x2F;i&gt; &lt;br &#x2F;&gt;Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-tags&quot;&gt;&lt;&#x2F;i&gt; &lt;br &#x2F;&gt;Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-admire">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/admire/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-thumbs-up&quot;&gt;&lt;&#x2F;i&gt; &lt;br &#x2F;&gt;Admire</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-user&quot;&gt;&lt;&#x2F;i&gt; &lt;br &#x2F;&gt;About</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://j2yes.github.io/2019/02/24/nodejs/npm-registry/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="j2yes">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="normal development">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">npm-registry
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-02-24 21:04:36" itemprop="dateCreated datePublished" datetime="2019-02-24T21:04:36+09:00">2019-02-24</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-07-17 23:47:06" itemprop="dateModified" datetime="2020-07-17T23:47:06+09:00">2020-07-17</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/nodejs/" itemprop="url" rel="index"><span itemprop="name">nodejs</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- 728x90 -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:728px;height:90px"
+         data-ad-client="ca-pub-2730756420121198"
+         data-ad-slot="5502918267"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="private-node-package-manger"><a href="#private-node-package-manger" class="headerlink" title="private node package manger"></a>private node package manger</h2><p><a href="http://www.npmjs.com" target="_blank" rel="noopener">www.npmjs.com</a> 에서도 개인이 한 달에 7$를 지불하면 private 패키지를 관리할 수 있다.<br>여건만 된다면 사설 저장소를 설치해서 관리하는 것도 나쁘지 않다.<br>미러링이나 캐쉬로 사용가능하기 때문에 private 으로 관리할 수 있다는 점 외에 장점이 많다.<br>사설 패키지 매니저로 <code>sinopia</code>와 <code>nexus</code>를 설치해보고 노드 프로젝트에 설정해보자.</p>
+<h2 id="sinopia"><a href="#sinopia" class="headerlink" title="sinopia"></a>sinopia</h2><p><a href="https://www.npmjs.com/package/sinopia" target="_blank" rel="noopener">https://www.npmjs.com/package/sinopia</a></p>
+<p>npm 엔드포인트 수정<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ npm config get registry</span><br><span class="line">https://registry.npmjs.org/</span><br><span class="line">$ npm set registry http://localhost:4873</span><br><span class="line">$ npm config get registry</span><br><span class="line">http://localhost:4873/</span><br></pre></td></tr></table></figure></p>
+<h2 id="nexus"><a href="#nexus" class="headerlink" title="nexus"></a>nexus</h2><p><a href="https://www.sonatype.com/" target="_blank" rel="noopener">https://www.sonatype.com/</a></p>
+<h3 id="설치-amp-실행"><a href="#설치-amp-실행" class="headerlink" title="설치 &amp; 실행"></a>설치 &amp; 실행</h3><ol>
+<li>nexus를 설치하는 방법은 2가지가 있다.<ul>
+<li>docker 사용</li>
+<li>그냥 설치</li>
+</ul>
+</li>
+<li>그냥 설치해 보자 … 우선 다운로드 받는다. <a href="https://www.sonatype.com/download-oss-sonatype" target="_blank" rel="noopener">https://www.sonatype.com/download-oss-sonatype</a></li>
+<li>java 8이 설치되어 있어야 한다.</li>
+<li>아카이브 해제하면 폴더 2개가 나온다</li>
+<li>sonatype-work 는 저장소다,</li>
+<li>다른 폴더의 안의 bin 폴더에서 nexus 파일을 실행</li>
+<li><a href="http://localhost:8081/" target="_blank" rel="noopener">http://localhost:8081/</a> 로 접속</li>
+<li>default admin account [admin / admin123]</li>
+</ol>
+<h3 id="repository-생성"><a href="#repository-생성" class="headerlink" title="repository 생성"></a>repository 생성</h3><p><img src="/images/npm-registry/create_repo.png" alt="" title="create_repository"></p>
+<ul>
+<li>저장소 목록에서 url 컬럼의 버튼을 누르면 저장소 주소가 copy됨</li>
+<li>repository 타입<ul>
+<li>group : repository를 하나로 묶을 수 있는 repo</li>
+<li>hosted : 저장소 직접 호스팅</li>
+<li>proxy : 외부 저장소 prox</li>
+</ul>
+</li>
+<li>npm 저장소 만들기<ul>
+<li>proxy에 공식 저장소 주소 넣기 : <code>https://registry.npmjs.org/</code></li>
+<li>hosted 만들기</li>
+<li>group 으로 hosted proxy 묶기</li>
+</ul>
+</li>
+</ul>
+<h3 id="nexus-npm저장소-계정만들기"><a href="#nexus-npm저장소-계정만들기" class="headerlink" title="nexus npm저장소 계정만들기"></a>nexus npm저장소 계정만들기</h3><p><img src="/images/npm-registry/create_acc.png" alt="" title="create_account"></p>
+<h3 id="저장소-realms-설정"><a href="#저장소-realms-설정" class="headerlink" title="저장소 realms 설정"></a>저장소 realms 설정</h3><p><img src="/images/npm-registry/set_realms.png" alt="" title="set_realms"></p>
+<h3 id="user-role-설정"><a href="#user-role-설정" class="headerlink" title="user role 설정"></a>user role 설정</h3><p>처음 anonymous 권한 설정이 읽기에 열려 있기 때문에 필요에 따라 anonymous user의 role 변경이 필요함</p>
+<p><img src="/images/npm-registry/set_role.png" alt="" title="set_role"></p>
+<h3 id="nexus-npm-저장소-사용하기"><a href="#nexus-npm-저장소-사용하기" class="headerlink" title="nexus npm 저장소 사용하기"></a>nexus npm 저장소 사용하기</h3><ul>
+<li><p>module publish 관련 설정</p>
+<ul>
+<li><p>.npmrc파일 생성</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#_auth=&lt;username&gt;:&lt;password&gt;</span><br><span class="line">#base64 인코딩</span><br><span class="line">_auth=YWRtaW46YWRtaW4xMjM=</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>package.json 수정</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  ...</span><br><span class="line"></span><br><span class="line">  &quot;publishConfig&quot;: &#123;</span><br><span class="line">    &quot;registry&quot;: &quot;http://your.nexus.repository.com/repository/npm-private/&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>install repository 지정</p>
+<ul>
+<li>npm config command 이용</li>
+<li>.npmrc 파일에 설정정보 추가<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">registry=http://your.nexus.repository.com/repository/npm-group/</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h2><ul>
+<li><a href="http://www.sonatype.org/nexus/2017/02/14/using-nexus-3-as-your-repository-part-2-npm-packages/" target="_blank" rel="noopener">http://www.sonatype.org/nexus/2017/02/14/using-nexus-3-as-your-repository-part-2-npm-packages/</a></li>
+<li><a href="https://help.sonatype.com/display/NXRM3" target="_blank" rel="noopener">https://help.sonatype.com/display/NXRM3</a></li>
+<li><a href="https://gs.saro.me/#!m=elec&amp;jn=774" target="_blank" rel="noopener">https://gs.saro.me/#!m=elec&amp;jn=774</a> </li>
+<li><a href="https://kingbbode.github.io/posts/nexus-3xx-maven-npm" target="_blank" rel="noopener">https://kingbbode.github.io/posts/nexus-3xx-maven-npm</a></li>
+<li><a href="https://blog.sonatype.com/using-nexus-3-as-your-repository-part-2-npm-packages" target="_blank" rel="noopener">https://blog.sonatype.com/using-nexus-3-as-your-repository-part-2-npm-packages</a></li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/nodejs/" rel="tag"># nodejs</a>
+          
+            <a href="/tags/npm/" rel="tag"># npm</a>
+          
+            <a href="/tags/nexus/" rel="tag"># nexus</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/24/docker/docker/" rel="next" title="docker">
+                <i class="fa fa-chevron-left"></i> docker
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/29/docker/docker-redis/" rel="prev" title="docker redis clustering">
+                docker redis clustering <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MTkzNS8xODQ4MQ=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">j2yes</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/%20%7C%7C%20archive">
+                
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#private-node-package-manger"><span class="nav-number">1.</span> <span class="nav-text">private node package manger</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sinopia"><span class="nav-number">2.</span> <span class="nav-text">sinopia</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nexus"><span class="nav-number">3.</span> <span class="nav-text">nexus</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#설치-amp-실행"><span class="nav-number">3.1.</span> <span class="nav-text">설치 &amp; 실행</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#repository-생성"><span class="nav-number">3.2.</span> <span class="nav-text">repository 생성</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nexus-npm저장소-계정만들기"><span class="nav-number">3.3.</span> <span class="nav-text">nexus npm저장소 계정만들기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#저장소-realms-설정"><span class="nav-number">3.4.</span> <span class="nav-text">저장소 realms 설정</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#user-role-설정"><span class="nav-number">3.5.</span> <span class="nav-text">user role 설정</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nexus-npm-저장소-사용하기"><span class="nav-number">3.6.</span> <span class="nav-text">nexus npm 저장소 사용하기</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reference"><span class="nav-number">4.</span> <span class="nav-text">reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">j2yes</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.6.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+    <script type="text/javascript">
+      window.livereOptions = {
+        refer: '2019/02/24/nodejs/npm-registry/'
+      };
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
